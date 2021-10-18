@@ -11,13 +11,22 @@ bot_id  = token:match("(%d+)")
 SUDO = SUDO
 sudo_users = {SUDO,1447617066}   
 print([[
-> CH › @nnnnbn
-> CH › @nnnnBn
-~> DEVELOPER › @VvTVv2
+murtaza mohammed devlpord for bots
+-------------------------------------------------------------------------|
+__        ___        _    ____------------------------------------|                   
+\ \      / / \      / \  |  _ \   -----------------------------------|                                        
+ \ \ /\ / / _ \    / _ \ | | | |  ----------------------------------|                              
+  \ V  V / ___ \  / ___ \| |_| |--------------------------------|
+   \_/\_/_/   \_\/_/   \_\____/    --------------------------|
+murtaza mohammed devlpord for bots  --------|
+> CH › @nnnnbn-----------------------------------------------|
+> CH › @nnnnBn-----------------------------------------------|
+~> DEVELOPER › @VvTVv2-----------------------------|
+-------------------------------------------------------------------------|
 ]])
 io.popen("mkdir File_Bot") 
 io.popen("cd File_Bot && rm -rf commands.lua") 
-io.popen("cd File_Bot && wget https://raw.githubusercontent.com/TEAM-WWAAD/Files_WAAD/main/File_Bot/commands.lua") 
+io.popen("cd File_Bot && wget https://raw.githubusercontent.com/TEAM-WAAD/Files_WAAD/main/File_Bot/commands.lua") 
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
@@ -1111,7 +1120,7 @@ send(msg.chat_id_, msg.id_,'*᥀︙لا يمكنك تغيير المطور ال�
 end
 if text == 'تحديث السورس ᥀︙' and DevWAADW(msg) then 
 os.execute('rm -rf WAAD.lua')
-os.execute('wget https://raw.githubusercontent.com/TEAM-WWAAD/WAAD/main/WAAD.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAM-WAAD/WAAD/main/WAAD.lua')
 send(msg.chat_id_, msg.id_,' *᥀︙تم تحديث السورس* \n*᥀︙لديك اخر اصدار لسورس وعد*\n*᥀︙الاصدار » { 2.8v}*')
 dofile('WAAD.lua')  
 end
@@ -2310,7 +2319,7 @@ send(msg.chat_id_, msg.id_,' *᥀︙تم تعيين عدد الاعضاء سيت
 end
 if text == 'تحديث السورس' and DevWAADW(msg) then 
 os.execute('rm -rf WAAD.lua')
-os.execute('wget https://raw.githubusercontent.com/TEAM-WWAAD/WAAD/main/WAAD.lua')
+os.execute('wget https://raw.githubusercontent.com/TEAM-WAAD/WAAD/main/WAAD.lua')
 send(msg.chat_id_, msg.id_,' *᥀︙تم تحديث السورس* \n*᥀︙لديك اخر اصدار لسورس وعد*\n*᥀︙الاصدار » { 2.8v}*')
 dofile('WAAD.lua')  
 end
@@ -3778,7 +3787,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevWAADW(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/TEAM-WWAAD/Files_WAAD/main/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/TEAM-WAAD/Files_WAAD/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -3816,7 +3825,7 @@ t = " *᥀︙الملف »* "..file.."\n*᥀︙تم تعطيل ملف* \n"
 else
 t = " *᥀︙بالتاكيد تم تعطيل ملف →* "..file.."\n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/TEAM-WWAAD/Files_WAAD/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/TEAM-WAAD/Files_WAAD/main/File_Bot/"..file)
 if res == 200 then
 os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -3836,7 +3845,7 @@ t = " *᥀︙بالتاكيد تم تفعيل ملف →* "..file.." \n"
 else
 t = " *᥀︙الملف »* "..file.."\n*᥀︙تم تفعيل ملف* \n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/TEAM-WWAAD/Files_WAAD/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/TEAM-WAAD/Files_WAAD/main/File_Bot/"..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
