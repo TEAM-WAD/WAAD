@@ -12,8 +12,9 @@ SUDO = SUDO
 sudo_users = {SUDO,1447617066}   
 print([[
 murtaza mohammed devlpord for bots
-__        ___        _    ____  
-\ \      / / \      / \  |  _ \ 
+-------------------------------------------------------------------------|
+__        ___        _    ____                                          |
+\ \      / / \      / \  |  _ \                                           |
  \ \ /\ / / _ \    / _ \ | | | |             
   \ V  V / ___ \  / ___ \| |_| |
    \_/\_/_/   \_\/_/   \_\____/
@@ -21,6 +22,7 @@ murtaza mohammed devlpord for bots
 > CH › @nnnnbn
 > CH › @nnnnBn
 ~> DEVELOPER › @VvTVv2
+-------------------------------------------------------------------------|
 ]])
 io.popen("mkdir File_Bot") 
 io.popen("cd File_Bot && rm -rf commands.lua") 
@@ -2626,7 +2628,7 @@ end
 end,nil)   
 end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
-Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ ᴡᴀᴀᴅ\n\n[✺  ᴡᴀᴀᴅ ᴄʜᴀɴɴᴇʟ](http://t.me/nnnnBn)\n\n[✺  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/nnnnbn)\n\n[✺  ʀᴏʟᴇх ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/VvTVv2)\n\n[✺  ʙᴏᴛ ʀᴏʟᴇх](http://t.me/tws_waadbot)"
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ ᴡᴀᴀᴅ\n\n[✺  ᴡᴀᴀᴅ ᴄʜᴀɴɴᴇʟ](http://t.me/nnnnBn)\n\n[✺  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/nnnnbn)\n\n[✺  ᴡᴀᴀᴅ ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/VvTVv2)\n\n[✺  ʙᴏᴛ ᴡᴀᴀᴅ](http://t.me/tws_waadbot)"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '✺ ѕᴏụʀᴄᴇ : ᴡᴀᴀᴅ',url="t.me/nnnnbn/906"}},
