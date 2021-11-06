@@ -8341,11 +8341,9 @@ database:srem(bot_id..'Chek:Groups',msg.chat_id_)
 end
 return false  
 end
-if text == 'بوت' or text == 'بوتت' then 
-NameBot = (DevAbs:get(DevProx..'Abs:NameBot') or 'وعد')
-local DevProxTEAM = {"لتكول بوت اسمي "..NameBot.." 😒🔪","اسمي القميل "..NameBot.." 😚♥️","عندي اسم تره 😒💔","صيحولي "..NameBot.." كافي بوت 😒🔪","انت البوت لك 😒💔"} 
-Dev_Abs(msg.chat_id_, msg.id_, 1, DevProxTEAM[math.random(#DevProxTEAM)] , 1, 'html') 
-return false
+if text == 'بوت' then
+Namebot = (database:get(bot_id..'Name:Bot') or 'وعد')
+send(msg.chat_id_, msg.id_,'*اسمي '..Namebot..'* ')
 end
 if text == 'الاحصائيات' then
 if Sudo(msg) then 
@@ -8354,6 +8352,25 @@ local Users = database:scard(bot_id..'User_Bot')
 Text = ' الاحصائيات ᥀︙ \n'..'*᥀︙عدد الكروبات » {'..Groups..'}'..'*\n*᥀︙ عدد المشتركين » {'..Users..'}*'
 send(msg.chat_id_, msg.id_,Text) 
 end
+return false
+end
+if text == '/start' and ChCheck(msg) then  
+if not DevRio:get(David..'Rio:Start:Time'..msg.sender_user_id_) then
+tdcli_function({ID="GetUser",user_id_=DevId},function(arg,dp) 
+local inline = {
+{{text="᥀ المطور .",url="t.me/"..(dp.username_ or "L9L9L")}},
+{{text="᥀ السورس .",url="https://t.me/L9L9L"},{text="᥀ لتنصيب بوت .",url="https://t.me/tsttt"}},{{text="᥀ اضفني في مجموعتك .",url="t.me/"..dp.username_.."?startgroup=botstart"}}
+}
+local start = DevRio:get(David.."Rio:Start:Bot")
+if start then 
+Start_Source = start
+else
+Start_Source = "᥀︙مرحبا انا بوت اسمي "..NameBot.."\n᥀︙اختصاصي حماية المجموعات\n᥀︙من التفليش والسبام والخخ .. . ،\n᥀︙تفعيلي سهل ومجانا فقط قم برفعي ادمن في مجموعتك وارسل امر ↫ تفعيل\n᥀︙سيتم رفع الادمنيه والمنشئ تلقائيا\n᥀︙ارسل امر /free او /play للتمتع باوامر الاعضاء"
+end 
+SendInline(msg.chat_id_,Start_Source,nil,inline)
+end,nil)
+end
+DevRio:setex(David..'Rio:Start:Time'..msg.sender_user_id_,300,true)
 return false
 end
 if text == 'الكروبات' then
