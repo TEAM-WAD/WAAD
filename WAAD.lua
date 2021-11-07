@@ -7065,12 +7065,12 @@ return false
 end
 local link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_)
 if link then  
-send(msg.chat_id_,msg.id_,'L𝗶N𝗸 G𝗿𝗼𝘂P :\n ['..link..']')  
+send(msg.chat_id_,msg.id_,'L𝗶N𝗸 G𝗿𝗼𝘂P :\n ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n ['..link..']')  
 else
 local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
 if linkgpp.ok == true then 
 database:set(bot_id.."Private:Group:Link"..msg.chat_id_,linkgpp.result)
-linkgp = 'L𝗶N𝗸 G𝗿𝗼𝘂P :\n ['..linkgpp.result..']'
+linkgp = 'L𝗶N𝗸 G𝗿𝗼𝘂P :\n ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ['..linkgpp.result..']'
 else
 linkgp = ' *᥀︙ لا يوجد رابط ارسل ضع رابط*'
 end  
