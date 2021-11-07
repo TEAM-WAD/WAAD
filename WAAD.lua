@@ -7070,7 +7070,7 @@ else
 local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
 if linkgpp.ok == true then 
 database:set(bot_id.."Private:Group:Link"..msg.chat_id_,linkgpp.result)
-linkgp = '𝒍𝒊𝒏𝒌 𝒈𝒓𝒐𝒖𝒑  ??\n*◐•━━━━━━ 𝗪𝗔 ━━━━━━━•◐*\n ['..linkgpp.result..']'
+linkgp = 'L𝗶N𝗸 G𝗿𝗼𝘂P :\n*◐•━━━━━━ 𝗪𝗔 ━━━━━━━•◐*\n ['..linkgpp.result..']'
 else
 linkgp = ' *᥀︙ لا يوجد رابط ارسل ضع رابط*'
 end  
@@ -8146,7 +8146,7 @@ send(msg.chat_id_, msg.id_," *᥀︙تم مسح ردود المدير*")
 end
 if text == ("ردود المدير") and Manager(msg) then
 local list = database:smembers(bot_id..'List:Manager'..msg.chat_id_..'')
-text = "* ᥀︙⇣ قائمه ردود المدير *\n*----------------*\n"
+text = " ᥀︙ قائمه ردود المدير \n"
 for k,v in pairs(list) do
 if database:get(bot_id.."Add:Rd:Manager:Gif"..v..msg.chat_id_) then
 db = 'متحركه'
@@ -8168,7 +8168,7 @@ end
 text = text..""..k..">> ("..v..") » {"..db.."}\n"
 end
 if #list == 0 then
-text = "* ᥀︙لا يوجد ردود مضافه حاليا*"
+text = " ᥀︙لا يوجد ردود مضافه حاليا"
 end
 send(msg.chat_id_, msg.id_,'['..text..']')
 end
