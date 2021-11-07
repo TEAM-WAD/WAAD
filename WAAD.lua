@@ -7051,6 +7051,25 @@ send(msg.chat_id_, msg.id_," *᥀︙تم تفعيل الصوره*")
 return false  
 end
 end
+if text == '/aian' and ChCheck(msg) then  
+if not DevRio:get(David..'Rio:Start:Time'..msg.sender_user_id_) then
+tdcli_function({ID="GetUser",user_id_=DevId},function(arg,dp) 
+local inline = {
+{{text="᥀ المطور .",url="t.me/"..(dp.username_ or "L9L9L")}},
+{{text="᥀ السورس .",url="https://t.me/L9L9L"},{text="᥀ لتنصيب بوت .",url="https://t.me/tsttt"}},{{text="᥀ اضفني في مجموعتك .",url="t.me/"..dp.username_.."?startgroup=botstart"}}
+}
+local start = DevRio:get(David.."Rio:Start:Bot")
+if start then 
+Start_Source = start
+else
+Start_Source = "᥀︙مرحبا انا بوت اسمي "..NameBot.."\n᥀︙اختصاصي حماية المجموعات\n᥀︙من التفليش والسبام والخخ .. . ،\n᥀︙تفعيلي سهل ومجانا فقط قم برفعي ادمن في مجموعتك وارسل امر ↫ تفعيل\n᥀︙سيتم رفع الادمنيه والمنشئ تلقائيا\n᥀︙ارسل امر /free او /play للتمتع باوامر الاعضاء"
+end 
+SendInline(msg.chat_id_,Start_Source,nil,inline)
+end,nil)
+end
+DevRio:setex(David..'Rio:Start:Time'..msg.sender_user_id_,300,true)
+return false
+end
 if text == "تعطيل الصوره" or text == 'تعطيل صورتي' then
 if Constructor(msg) then  
 database:del(bot_id.."my_photo:status"..msg.chat_id_) 
