@@ -2705,7 +2705,9 @@ if text == "ترتيب الاوامر" and Constructor(msg) then
  database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"حذ")
  database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":ت","تثبيت")
  database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"ت")
- send(msg.chat_id_, msg.id_,"*᥀︙تم ترتيب الاوامر بالشكل التالي*\n*᥀︙ايدي - ا .*\n*᥀︙مميز - م .\n᥀︙ادمن - اد .*\n*᥀︙مدير - مد . \n᥀︙منشى - من .*\n*᥀︙المنشئ الاساسي - اس .*\n*᥀︙تعطيل الايدي بالصوره - تعط .*\n*᥀︙تفعيل الايدي بالصوره - تفع .*\n*᥀︙تنزيل الكل - تك .*\n*᥀︙اضف رد - رد .*\n*᥀︙حذف رد - حذ .*\n*᥀︙تثبيت - ت .*")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":امر","اضف امر")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"امر")
+send(msg.chat_id_, msg.id_,"*᥀︙تم ترتيب الاوامر بالشكل التالي*\n*᥀︙ايدي - ا .*\n*᥀︙مميز - م .\n᥀︙ادمن - اد .*\n*᥀︙مدير - مد . \n᥀︙منشى - من .*\n*᥀︙المنشئ الاساسي - اس .*\n*᥀︙تعطيل الايدي بالصوره - تعط .*\n*᥀︙تفعيل الايدي بالصوره - تفع .*\n*᥀︙تنزيل الكل - تك .*\n*᥀︙اضف رد - رد .*\n*᥀︙حذف رد - حذ .*\n*᥀︙تثبيت - ت .*\n*᥀︙اضف امر - امر .*")
  end
 if text == 'اضف امر' and Constructor(msg) and GetChannelMember(msg) then  
 database:set(bot_id.."Set:Cmd:Group"..msg.chat_id_..':'..msg.sender_user_id_,'true') 
