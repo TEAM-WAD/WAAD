@@ -8165,7 +8165,7 @@ db = 'ملف'
 elseif database:get(bot_id.."Add:Rd:Manager:Audio"..v..msg.chat_id_) then
 db = 'اغنيه'
 end
-text = text..""..k.."← ("..v..") ← {"..db.."}\n"
+text = text..""..k.."← ["..v.."] ← ⁅"..db.."⁆\n"
 end
 if #list == 0 then
 text = " ᥀︙لا يوجد ردود مضافه حاليا"
