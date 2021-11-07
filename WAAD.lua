@@ -7998,7 +7998,7 @@ db = 'ملف'
 elseif database:get(bot_id.."Add:Rd:Sudo:Audio"..v) then
 db = 'اغنيه'
 end
-text = text..""..k.." >> ("..v..") » {"..db.."}\n"
+text = text..""..k.." ← ["..v.."] ← ⁅"..db.."⁆\n"
 end
 if #list == 0 then
 text = " ᥀︙لا يوجد ردود للمطور"
