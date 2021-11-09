@@ -7050,12 +7050,12 @@ return false
 end
 local link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_)
 if link then  
-send(msg.chat_id_,msg.id_,'𝒍𝒊𝒏𝒌 𝒈𝒓𝒐𝒖𝒑  𖠐\n*◐•━━━━━━ 𝗪𝗔 ━━━━━━━•◐*\n ['..link..']')  
+send(msg.chat_id_,msg.id_,'‹  L𝗶N𝗸 G𝗿𝗼𝘂P  › :\n*        ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*\n ['..link..']')  
 else
 local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
 if linkgpp.ok == true then 
 database:set(bot_id.."Private:Group:Link"..msg.chat_id_,linkgpp.result)
-linkgp = '𝒍𝒊𝒏𝒌 𝒈𝒓𝒐𝒖𝒑  ??\n*◐•━━━━━━ 𝗪𝗔 ━━━━━━━•◐*\n ['..linkgpp.result..']'
+linkgp = '‹  L𝗶N𝗸 G𝗿𝗼𝘂P  › :\n*        ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ *\n ['..linkgpp.result..']'
 else
 linkgp = ' *᥀︙ لا يوجد رابط ارسل ضع رابط*'
 end  
@@ -9551,9 +9551,9 @@ local help_text = database:get(bot_id..'help_text')
 Text = [[
 *┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*
 
-*‹  ﺂه‍ـلا بـﯾك ؏ـزيزي فـﻲ قسـ۾ ﺂواﻤࢪ :  ›*
-*‹  يـﻤڪنك من خلال ه‍ذه الاواﻤࢪ تحڪم باعدادات الڪروب :  ›*
-*‹ ويتـﯾح لك ايضا استما؏ لليوتيوب او اوامر تسليه الاخرى :  ›*
+*.  ﺂه‍ـلا بـﯾك ؏ـزيزي فـﻲ قسـ۾ ﺂواﻤࢪ :  ›*
+*.  يـﻤڪنك من خلال ه‍ذه الاواﻤࢪ تحڪم باعدادات الڪروب :  ›*
+*, ويتـﯾح لك ايضا استما؏ لليوتيوب او اوامر تسليه الاخرى :  ›*
 
 ٴ*┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*ٴ
 [‹ ѕᴏụʀᴄᴇ : ᴡᴀᴀᴅ › ](t.me/nnnnbn) 
@@ -9564,19 +9564,10 @@ keyboard.inline_keyboard = {
                  {{text = '۾𝟯', callback_data="/help3"}},
      {{text = '‹  ﺂلالـ؏ـاب  ›', callback_data="/help4"},{text = '‹  ﺂلتسلـﯾـه  ›', callback_data="/help5"}},
                  {{text = '‹  ﺂلاﻐـاﻧـي  ›', callback_data="/help3"}},
-                 {{text = '‹ اخفاء الكليشه  ›', callback_data="/HideHelpList:"..data.sender_user_id_}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
-end
-if DataText and DataText:match('/HideHelpList:(.*)') then
-local Rio = DataText:match('/HideHelpList:(.*)')
-if tonumber(Rio) == tonumber(data.sender_user_id_) then
-EditMsg(Chat_Id2, Msg_Id2, "᥀︙تم اخفاء كليشة الاوامر") 
-else
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("᥀ عذرا الامر ليس لك .")..'&show_alert=true')
-end
 end
 if text == 'تعطيل العاب اونلاين' and Mod(msg) and msg.reply_to_message_id_ == 0 then 
 database:set(bot_id..'lockGeamVip'..msg.chat_id_,true)  
