@@ -2740,18 +2740,6 @@ if text == "التاريخ" then
 local ramsesj20 =  "\n*᥀︙التاريخ :* "..os.date("%Y/%m/%d")
 send(msg.chat_id_, msg.id_,ramsesj20)
 end
-if text == 'المطور' then  
-if DevWAADW(msg) then
-local bl = ' * اهلا بك عزيزي  آلمـطـور*\n*آنت المطور الاساسي هنا في البوت  *\n┉  ┉  ┉  ┉  ┉  ┉  ┉  ┉ء\n*تسـتطـيع‌‏ التحڪم باوامر الخاصه في البوت*\n*من خلال الكيبورد الخاص في البوت ولايمكن لغيرك اضهار هذه الاوامر  الخاصه بك*\n*قناة سورس البوت *[اضغط هنا](t.me/nnnnbn)'
-local keyboard = {
-{' الاساسيين ','مسح الاساسيين'},
-{' الثانويين ','مسح الثانويين'},
-{' المطورين ','مسح المطورين'},
-{' تغير المطور الاساسي ','↫ تغيير كليشه المطور '},
-{'↫ رجوع '},
-}
-send_inline_key(msg.chat_id_,bl,keyboard)
-else
 if text == 'السيرفر' and SudoBot(msg) then 
 send(msg.chat_id_, msg.id_, io.popen([[
 linux_version=`lsb_release -ds`
