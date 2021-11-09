@@ -9564,10 +9564,19 @@ keyboard.inline_keyboard = {
                  {{text = '۾𝟯', callback_data="/help3"}},
      {{text = '‹  ﺂلالـ؏ـاب  ›', callback_data="/help4"},{text = '‹  ﺂلتسلـﯾـه  ›', callback_data="/help5"}},
                  {{text = '‹  ﺂلاﻐـاﻧـي  ›', callback_data="/help3"}},
+                 {{text = '‹ اخفاء الكليشه  ›', callback_data="/HideHelpList:"..data.sender_user_id_}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
+end
+if DataText and DataText:match('/HideHelpList:(.*)') then
+local Rio = DataText:match('/HideHelpList:(.*)')
+if tonumber(Rio) == tonumber(data.sender_user_id_) then
+EditMsg(Chat_Id2, Msg_Id2, "᥀︙تم اخفاء كليشة الاوامر") 
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("᥀ عذرا الامر ليس لك .")..'&show_alert=true')
+end
 end
 if text == 'تعطيل العاب اونلاين' and Mod(msg) and msg.reply_to_message_id_ == 0 then 
 database:set(bot_id..'lockGeamVip'..msg.chat_id_,true)  
