@@ -8131,7 +8131,7 @@ send(msg.chat_id_, msg.id_," *᥀︙تم مسح ردود المدير*")
 end
 if text == ("ردود المدير") and Manager(msg) then
 local list = database:smembers(bot_id..'List:Manager'..msg.chat_id_..'')
-text = " ‹ : قائمـه ࢪدود المديࢪ  . \n*┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*\n"
+text = " ‹ : قائمـه ࢪدود المديࢪ  . \n ❨ W𝗲𝗹C𝗼M𝗲 T𝗼 M𝗮N𝗮G𝗲𝗿'S R𝗲S𝗽O𝗻S𝗲S ❩ . \n ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."Add:Rd:Manager:Gif"..v..msg.chat_id_) then
 db = 'متـﺣࢪڪه : 💞'
@@ -8150,7 +8150,7 @@ db = 'ملـف : 🗂'
 elseif database:get(bot_id.."Add:Rd:Manager:Audio"..v..msg.chat_id_) then
 db = 'اغـﻧيـه : 🎙'
 end
-text = text..""..k..">> ("..v..") » {"..db.."}\n"
+text = text..""..k.."← ❨ "..v.." ❩ ← ❨ "..db.." ❩\n"
 end
 if #list == 0 then
 text = " ᥀︙لايوﺟد ࢪدود للمديࢪ حاليا  ."
