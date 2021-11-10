@@ -8154,6 +8154,9 @@ text = text..""..k..">> ("..v..") » {"..db.."}\n"
 end
 if #list == 0 then
 text = " ᥀︙لا يوجد ردود للمدير"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '‹ ѕᴏụʀᴄᴇ : ᴡᴀᴀᴅ ›.',url="t.me/nnnnBn"}},
 end
 send(msg.chat_id_, msg.id_,'['..text..']')
 end
@@ -9951,7 +9954,6 @@ keyboard.inline_keyboard = {
             {{text = '۾𝟯', callback_data="/help3"}},
    {{text = '‹  ﺂلالـ؏ـاب  ›', callback_data="/help4"},{text = '‹  ﺂلتسلـﯾـه  ›', callback_data="/help5"}},
             {{text = '‹  ﺂلاﻐـاﻧـي  ›', callback_data="/help6"}},
-{{text = '‹ ࢪﺟو؏ ›', callback_data="/help"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10016,7 +10018,6 @@ keyboard.inline_keyboard = {
             {{text = '۾𝟯', callback_data="/help3"}},
    {{text = '‹  ﺂلالـ؏ـاب  ›', callback_data="/help4"},{text = '‹  ﺂلتسلـﯾـه  ›', callback_data="/help5"}},
             {{text = '‹  ﺂلاﻐـاﻧـي  ›', callback_data="/help6"}},
-{{text = '‹ ࢪﺟو؏ ›', callback_data="/help"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10073,7 +10074,7 @@ local Teext =[[
 *‹ : مسح ← قائمه منع المتحركات* 
 *‹ : مسح ← قائمه منع الملصقات*
 *┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*
-                 ( اوامر الردود )
+                 *( اوامر الردود )*
 *┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*
 *‹ : ردود المدير ← لعࢪض قائمه الردود*
 *‹ : اضف رد ← لاضافه رد معين*
@@ -10087,7 +10088,6 @@ keyboard.inline_keyboard = {
             {{text = '۾𝟯', callback_data="/help3"}},
    {{text = '‹  ﺂلالـ؏ـاب  ›', callback_data="/help4"},{text = '‹  ﺂلتسلـﯾـه  ›', callback_data="/help5"}},
             {{text = '‹  ﺂلاﻐـاﻧـي  ›', callback_data="/help6"}},
-{{text = '‹ ࢪﺟو؏ ›', callback_data="/help"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10128,7 +10128,6 @@ keyboard.inline_keyboard = {
             {{text = '۾𝟯', callback_data="/help3"}},
    {{text = '‹  ﺂلالـ؏ـاب  ›', callback_data="/help4"},{text = '‹  ﺂلتسلـﯾـه  ›', callback_data="/help5"}},
             {{text = '‹  ﺂلاﻐـاﻧـي  ›', callback_data="/help6"}},
-{{text = '‹ ࢪﺟو؏ ›', callback_data="/help"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -10176,7 +10175,6 @@ keyboard.inline_keyboard = {
             {{text = '۾𝟯', callback_data="/help3"}},
    {{text = '‹  ﺂلالـ؏ـاب  ›', callback_data="/help4"},{text = '‹  ﺂلتسلـﯾـه  ›', callback_data="/help5"}},
             {{text = '‹  ﺂلاﻐـاﻧـي  ›', callback_data="/help6"}},
-{{text = '‹ ࢪﺟو؏ ›', callback_data="/help"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
