@@ -8131,32 +8131,29 @@ send(msg.chat_id_, msg.id_," *᥀︙تم مسح ردود المدير*")
 end
 if text == ("ردود المدير") and Manager(msg) then
 local list = database:smembers(bot_id..'List:Manager'..msg.chat_id_..'')
-text = " ᥀︙قائمه ردود المدير \n*◐•━━━━━━ 𝗪𝗔 ━━━━━━━•◐*\n"
+text = " ‹ : قائمـه ࢪدود المديࢪ  . \n*┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."Add:Rd:Manager:Gif"..v..msg.chat_id_) then
-db = 'متحركه'
+db = 'متـﺣࢪڪه : 💞'
 elseif database:get(bot_id.."Add:Rd:Manager:Vico"..v..msg.chat_id_) then
-db = 'بصمه'
+db = 'بصـﻤـه : 🎙'
 elseif database:get(bot_id.."Add:Rd:Manager:Stekrs"..v..msg.chat_id_) then
-db = 'ملصق'
+db = 'ملصـق : 💗'
 elseif database:get(bot_id.."Add:Rd:Manager:Text"..v..msg.chat_id_) then
-db = 'رساله'
+db = 'ࢪسـالـة : 📩'
 elseif database:get(bot_id.."Add:Rd:Manager:Photo"..v..msg.chat_id_) then
-db = 'صوره'
+db = 'صـوࢪه : 🍇'
 elseif database:get(bot_id.."Add:Rd:Manager:Video"..v..msg.chat_id_) then
 db = 'فيديو'
 elseif database:get(bot_id.."Add:Rd:Manager:File"..v..msg.chat_id_) then
-db = 'ملف'
+db = 'ملـف : 🗂'
 elseif database:get(bot_id.."Add:Rd:Manager:Audio"..v..msg.chat_id_) then
-db = 'اغنيه'
+db = 'اغـﻧيـه : 🎙'
 end
 text = text..""..k..">> ("..v..") » {"..db.."}\n"
 end
 if #list == 0 then
-text = " ᥀︙لا يوجد ردود للمدير"
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '‹ ѕᴏụʀᴄᴇ : ᴡᴀᴀᴅ ›.',url="t.me/nnnnBn"}},
+text = " ᥀︙لايوﺟد ࢪدود للمديࢪ حاليا  ."
 end
 send(msg.chat_id_, msg.id_,'['..text..']')
 end
