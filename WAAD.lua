@@ -815,6 +815,7 @@ local keyboard = {
 {' ‹ تﻐير الاشتراك  ›',' ‹ الاشتراك اجباࢪي ›'},
 {' ‹ وﺿ؏ قناه‍ ﺂشتراك ﺂجباري للبوت › '},
 {' ‹ تﻧظيف الڪروبات  ›',' ‹ تﻧظيف الﻤشتࢪڪيـטּ ›'},
+{' ‹ ‹ ﺟلب نسـخه احتياطيـه › › '},
 {' ‹ قائمه المحضورين ؏ـام ›',' ‹ قائمه المڪتوﻤين ؏ـام ›'},
 {' ‹ تﻐير الـﻤطوࢪ الاساسي للبوت › '},
 {' ‹ السـوࢪس ›',' ‹ الـﻤطوڕ ›'},
@@ -992,19 +993,19 @@ end,nil)
 end,nil)
 end,nil)
 end 
-if text == 'تفعيل النسخه التلقائيه ᥀︙' and SudoBot(msg) then  
+if text == '‹ تفـ؏ـيل ﺂلنسـﺧـه ﺂلتلقائيه ›' and SudoBot(msg) then  
 send(msg.chat_id_, msg.id_,"*᥀︙تم تفعيل النسخه الاحتياطيه التلقائيه*") 
 database:del(bot_id.."AutoFile")
 end
-if text == 'تعطيل النسخه التلقائيه ᥀︙' and SudoBot(msg) then  
+if text == '‹ تـ؏ـطيل ﺂلنسـﺧـه ﺂلتلقائيه ›' and SudoBot(msg) then  
 send(msg.chat_id_, msg.id_,"*᥀︙تم تعطيل النسخه الاحتياطيه التلقائيه*") 
 database:set(bot_id.."AutoFile",true) 
 end
-if text == 'مسح الثانويين ᥀︙' and SudoBot(msg) then  
+if text == '‹ ﻤسح ﺂلثاﻧوﯾﯾن ›' and SudoBot(msg) then  
 database:del(bot_id.."DEV:Sudo:T")
 send(msg.chat_id_, msg.id_, "\n*᥀︙تم مسح قائمة المطورين الثانويين* ")
 end
-if text == 'الثانويين ᥀︙' and SudoBot(msg) then
+if text == '‹ ﺂلثاﻧوﯾﯾن ›' and SudoBot(msg) then
 local list = database:smembers(bot_id.."DEV:Sudo:T")
 t = "\n*᥀︙قائمة مطورين الثانويين للبوت* \n *◐•━━━━━━ 𝗪𝗔 ━━━━━━━•◐* \n"
 for k,v in pairs(list) do
@@ -1020,7 +1021,7 @@ t = "*᥀︙لا يوجد مطورين ثانويين*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == 'تفعيل التواصل ᥀︙' and DevWAADW(msg) then  
+if text == '‹ تفـ؏ـيل ﺂلتواصل ›' and DevWAADW(msg) then  
 if database:get(bot_id..'Tuasl:Bots') then
 database:del(bot_id..'Tuasl:Bots') 
 Text = '\n *᥀︙تم تفعيل التواصل* ' 
@@ -1029,7 +1030,7 @@ Text = '\n *᥀︙بالتاكيد تم تفعيل التواصل* '
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'تعطيل التواصل ᥀︙' and DevWAADW(msg) then  
+if text == '‹ تـ؏ـطيل ﺂلتواصل ›' and DevWAADW(msg) then  
 if not database:get(bot_id..'Tuasl:Bots') then
 database:set(bot_id..'Tuasl:Bots',true) 
 Text = '\n *᥀︙تم تعطيل التواصل*' 
@@ -1038,7 +1039,7 @@ Text = '\n *᥀︙بالتاكيد تم تعطيل التواصل*'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'تفعيل البوت الخدمي ᥀︙' and DevWAADW(msg) then  
+if text == '‹ تفـ؏ـيل بوت ﺂلـﺧدمي ›' and DevWAADW(msg) then  
 if database:get(bot_id..'Free:Bots') then
 database:del(bot_id..'Free:Bots') 
 Text = '\n *᥀︙تم تفعيل البوت الخدمي* ' 
@@ -1047,7 +1048,7 @@ Text = '\n *᥀︙بالتاكيد تم تفعيل البوت الخدمي* '
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'تعطيل البوت الخدمي ᥀︙' and DevWAADW(msg) then  
+if text == '‹ تـ؏ـطيل بوت ﺂلـﺧدمي ›' and DevWAADW(msg) then  
 if not database:get(bot_id..'Free:Bots') then
 database:set(bot_id..'Free:Bots',true) 
 Text = '\n *᥀︙تم تعطيل البوت الخدمي*' 
@@ -1067,12 +1068,12 @@ send(msg.chat_id_, msg.id_,' *᥀︙تم حفظ كليشه ستارت*')
 database:del(bot_id..'Start:Bots') 
 return false
 end
-if text == 'ضع كليشه ستارت ᥀︙' and DevWAADW(msg) then 
+if text == '‹ ضـ؏ ڪليشه ستارت ›' and DevWAADW(msg) then 
 database:set(bot_id..'Start:Bots',true) 
 send(msg.chat_id_, msg.id_,' *᥀︙ارسل لي الكليشه الان*')
 return false
 end
-if text == 'حذف كليشه ستارت ᥀︙' and DevWAADW(msg) then 
+if text == '‹ حذف ڪليشه ستارت ›' and DevWAADW(msg) then 
 database:del(bot_id..'Start:Bot') 
 send(msg.chat_id_, msg.id_,' *᥀︙تم حذف كليشه ستارت*')
 end
@@ -1112,11 +1113,11 @@ end
 end,nil)
 end
 end
-if text =='تغيير المطور الاساسي ᥀︙' and SudoBot(msg) then
+if text =='‹ تﻐير الـﻤطوࢪ الاساسي للبوت ›' and SudoBot(msg) then
 send(msg.chat_id_, msg.id_,'*᥀︙ ارسل ايدي المطور الاساسي الجديد*')
 database:set(bot_id..'Ed:DevBots',true) 
 end
-if text =='تغيير المطور الاساسي ᥀︙' and not SudoBot(msg) then
+if text =='‹ تﻐير الـﻤطوࢪ الاساسي للبوت ›' and not SudoBot(msg) then
 send(msg.chat_id_, msg.id_,'*᥀︙لا يمكنك تغيير المطور الاساسي*')
 end
 if text == 'تحديث السورس ᥀︙' and DevWAADW(msg) then 
@@ -1129,16 +1130,16 @@ if text == 'الاصدار ᥀︙' and DevWAADW(msg) then
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,' *᥀︙اصدار سورس وعد* \n*᥀︙الاصدار »{ 2.8v}*')
 end
-if text == 'قناه تحديثات البوت ᥀︙' and DevWAADW(msg) then 
+if text == '‹ قناه‍ تحدﯾثات السورس ›' and DevWAADW(msg) then 
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,' ᥀︙[تحديثات البوت](t.me/nnnnbn) \n᥀︙[قناه السورس](t.me/nnnnBn)')
 end
-if text == "ضع اسم للبوت ᥀︙" and DevWAADW(msg) then  
+if text == "‹ ضـ؏ اسـﻤ ﻟ̣̣لبوت ›" and DevWAADW(msg) then  
 database:setex(bot_id..'Set:Name:Bot'..msg.sender_user_id_,300,true) 
 send(msg.chat_id_, msg.id_," *᥀︙ارسل اليه الاسم الان* ")
 return false
 end
-if text == 'الاحصائيات ᥀︙' and DevWAADW(msg) then 
+if text == '‹ اݪاحـ۫صـائيات ›' and DevWAADW(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = ' الاحصائيات ᥀︙ \n'..' *᥀︙عدد الكروبات » {'..Groups..'}'..'*\n *᥀︙عدد المشتركين » {'..Users..'}*'
@@ -1159,7 +1160,7 @@ Text = '\n *᥀︙الكروبات» {`'..Groups..'`}*'
 send(msg.chat_id_, msg.id_,Text) 
 return false
 end
-if text == ("المطورين ᥀︙") and DevWAADW(msg) then
+if text == ("‹ الـﻤطوࢪين ›") and DevWAADW(msg) then
 local list = database:smembers(bot_id..'Sudo:User')
 t = "\n *᥀︙قائمة المطورين* \n*◐•━━━━━━ 𝗪𝗔 ━━━━━━━•◐*\n"
 for k,v in pairs(list) do
@@ -1175,7 +1176,7 @@ t = " *᥀︙لا يوجد مطورين*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == ("قائمه العام ᥀︙") and DevWAADW(msg) then
+if text == ("‹ قائمه المحضورين ؏ـام ›") and DevWAADW(msg) then
 local list = database:smembers(bot_id..'GBan:User')
 t = "\n *᥀︙قائمه المحظورين عام* \n*◐•━━━━━━ 𝗪𝗔 ━━━━━━━•◐*\n"
 for k,v in pairs(list) do
@@ -1192,7 +1193,7 @@ end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
-if text == ("قائمه الكتم العام ᥀︙") and DevWAADW(msg) then
+if text == ("‹ قائمه المڪتوﻤين ؏ـام ›") and DevWAADW(msg) then
 local list = database:smembers(bot_id..'Gmute:User')
 t = "\n *᥀︙قائمة المكتومين عام* \n*◐•━━━━━━ 𝗪𝗔 ━━━━━━━•◐*\n"
 for k,v in pairs(list) do
@@ -1209,35 +1210,35 @@ end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
-if text=="اذاعه خاص ᥀︙" and msg.reply_to_message_id_ == 0 and DevWAADW(msg) then 
+if text=="‹ اذا؏ـة ﺧاص ›" and msg.reply_to_message_id_ == 0 and DevWAADW(msg) then 
 database:setex(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," *᥀︙ارسل الان اذاعتك؟* \n*᥀︙للخروج ارسل الغاء* ")
 return false
 end 
-if text=="اذاعه ᥀︙" and msg.reply_to_message_id_ == 0 and DevWAADW(msg) then 
+if text=="‹ اذا؏ـة ›" and msg.reply_to_message_id_ == 0 and DevWAADW(msg) then 
 database:setex(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," *᥀︙ارسل الان اذاعتك؟* \n*᥀︙للخروج ارسل الغاء* ")
 return false
 end  
-if text=="اذاعه بالتثبيت ᥀︙" and msg.reply_to_message_id_ == 0 and DevWAADW(msg) then 
+if text=="‹ ﺂذا؏ـة بالتثبيت ›" and msg.reply_to_message_id_ == 0 and DevWAADW(msg) then 
 database:setex(bot_id.."Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," *᥀︙ارسل الان اذاعتك؟* \n*᥀︙للخروج ارسل الغاء* ")
 return false
 end 
-if text=="اذاعه بالتوجيه ᥀︙" and msg.reply_to_message_id_ == 0  and DevWAADW(msg) then 
+if text=="‹ اذا؏ـة بالتوﺟية عامة ›" and msg.reply_to_message_id_ == 0  and DevWAADW(msg) then 
 database:setex(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," *᥀︙ارسل لي التوجيه الان*")
 return false
 end 
-if text=="اذاعه بالتوجيه خاص ᥀︙" and msg.reply_to_message_id_ == 0  and DevWAADW(msg) then 
+if text=="‹ اذا؏ـة بالتوﺟية خاص ›" and msg.reply_to_message_id_ == 0  and DevWAADW(msg) then 
 database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ᥀︙ارسل لي التوجيه الان")
 return false
 end 
-if text == 'جلب نسخه الاحتياطيه ᥀︙' and DevWAADW(msg) then 
+if text == '‹ ﺟلب نسـخه احتياطيـه ›' and DevWAADW(msg) then 
 GetFile_Bot(msg)
 end
-if text == "تنظيف المشتركين ᥀︙" and DevWAADW(msg) then
+if text == "‹ تﻧظيف الﻤشتࢪڪيـטּ ›" and DevWAADW(msg) then
 local pv = database:smembers(bot_id.."User_Bot")
 local sendok = 0
 for i = 1, #pv do
@@ -1263,7 +1264,7 @@ end,nil)
 end
 return false
 end
-if text == "تنظيف الكروبات ᥀︙" and DevWAADW(msg) then 
+if text == "‹ تﻧظيف الڪروبات  ›" and DevWAADW(msg) then 
 local group = database:smembers(bot_id..'Chek:Groups') 
 local w =0
 local q =0
@@ -2324,7 +2325,7 @@ os.execute('wget https://raw.githubusercontent.com/TEAM-WAAD/WAAD/main/WAAD.lua'
 send(msg.chat_id_, msg.id_,' *᥀︙تم تحديث السورس* \n*᥀︙لديك اخر اصدار لسورس وعد*\n*᥀︙الاصدار » { 2.8v}*')
 dofile('WAAD.lua')  
 end
-if text and text:match("^تغير الاشتراك$") and DevWAADW(msg) then  
+if text and text:match("^‹ تﻐير الاشتراك  ›$") and DevWAADW(msg) then  
 database:setex(bot_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 360, true)  
 send(msg.chat_id_, msg.id_, ' *᥀︙حسنآ ارسل لي معرف القناة*')
 return false  
@@ -2339,12 +2340,12 @@ database:del(bot_id..'text:ch:user')
 send(msg.chat_id_, msg.id_, " *᥀︙تم مسح رساله الاشتراك* ")
 return false  
 end
-if text and text:match("^وضع قناة الاشتراك ᥀︙$") and DevWAADW(msg) then  
+if text and text:match("^‹ وﺿ؏ قناه‍ ﺂشتراك ﺂجباري للبوت ›$") and DevWAADW(msg) then  
 database:setex(bot_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 360, true)  
 send(msg.chat_id_, msg.id_, ' *᥀︙حسنآ ارسل لي معرف القناة*')
 return false  
 end
-if text == "تفعيل الاشتراك الاجباري ᥀︙" and DevWAADW(msg) then  
+if text == "‹ تفـ؏ـيل ﺂلاشتراك ﺂجباࢪي ›" and DevWAADW(msg) then  
 if database:get(bot_id..'add:ch:id') then
 local addchusername = database:get(bot_id..'add:ch:username')
 send(msg.chat_id_, msg.id_," *᥀︙الاشتراك الاجباري مفعل* \n*᥀︙على القناة »* ["..addchusername.."]")
@@ -2354,13 +2355,13 @@ send(msg.chat_id_, msg.id_," *᥀︙اهلا عزيزي المطور* \n*᥀︙�
 end
 return false  
 end
-if text == "تعطيل الاشتراك الاجباري ᥀︙" and DevWAADW(msg) then  
+if text == "‹ تـ؏ـطيل ﺂلاشتراك ﺂجباࢪي ›" and DevWAADW(msg) then  
 database:del(bot_id..'add:ch:id')
 database:del(bot_id..'add:ch:username')
 send(msg.chat_id_, msg.id_, " *᥀︙تم تعطيل الاشتراك الاجباري* ")
 return false  
 end
-if text == "الاشتراك الاجباري ᥀︙" and DevWAADW(msg) then  
+if text == "‹ الاشتراك اجباࢪي ›" and DevWAADW(msg) then  
 if database:get(bot_id..'add:ch:username') then
 local addchusername = database:get(bot_id..'add:ch:username')
 send(msg.chat_id_, msg.id_, " *᥀︙تم تفعيل الاشتراك الاجباري* \n*᥀︙على القناة »* ["..addchusername.."]")
@@ -2628,7 +2629,7 @@ end
 end
 end,nil)   
 end
-if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
+if text == 'السورس' or text == 'سورس' or text == '‹ السـوࢪس ›' or text == 'يا سورس' then  
 Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴡᴀᴀᴅ\n\n[᥀︙  ᴡᴀᴀᴅ ᴄʜᴀɴɴᴇʟ](http://t.me/nnnnBn)\n\n[᥀︙  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/nnnnbn)\n\n[᥀︙  ᴡᴀᴀᴅ ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/VvTVv2)\n\n[᥀︙  ʙᴏᴛ ᴡᴀᴀᴅ](http://t.me/tws_waadbot)"
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -7027,7 +7028,7 @@ database:del(bot_id.."Link_Group:status"..msg.chat_id_)
 send(msg.chat_id_, msg.id_," *᥀︙تم تعطيل الرابط*") 
 return false end
 end
-if text == "المطور" or text == "مطور" then
+if text == "المطور" or text == "‹ الـﻤطوڕ ›" then
 local TEXT_SUD = database:get(bot_id..'ToBaK:TEXT_SUDO')
 if TEXT_SUDO then 
 send(msg.chat_id_, msg.id_,TEXT_SUDO)
@@ -7772,12 +7773,12 @@ end
 if text == ""..(database:get(bot_id..'Name:Bot') or 'وعد').."" then  
 Namebot = (database:get(bot_id..'Name:Bot') or 'وعد')
 local WAAD_Msg = {
-'عمغي 🥺💕.',
-'هاا شتريد كافي ☹️.',
-'مشايف بوت شني 😂.',
-'كول حبيبي ؟ اني '..Namebot..'',
-'مشغول حالياً',
-'عمري فداك '..Namebot..' كول حب'
+'*عمغي 🥺💕.*',
+'*هاا شتريد كافي ☹️.*',
+'*مشايف بوت شني 😂.*',
+'*كول حبيبي ؟ اني '..Namebot..'*',
+'*مشغول حالياً*',
+'*عمري فداك '..Namebot..' كول حب*'
 }
 send(msg.chat_id_, msg.id_,'['..WAAD_Msg[math.random(#WAAD_Msg)]..']') 
 return false
