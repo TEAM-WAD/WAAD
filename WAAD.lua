@@ -9819,7 +9819,7 @@ end
 if DAata =="/HelP" and Mod(msg) and tonumber(msg.reply_to_message_id_) > 0 then
 DeleteMessage(msg.chat_id_,{[0] = tonumber(msg.reply_to_message_id_),msg.id_})   
 end
-if text == '/aian' or text == '/free' or text == '/kian' then  
+if text == '/start' or text == '/free' or text == '/kian' then  
 Text = "اهلا بك عزيزي/nانا بوت حمايه المجموعات/nتفعيلي سهل جدا قم برفعي مشرف وارسل فعيل بعدها/nسيتم رفع الادمنيه بشكل تلقائي"
 keyboard = {} 
 keyboard.inline_keyboard = {
