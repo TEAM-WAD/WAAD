@@ -9808,7 +9808,7 @@ if audios.Info == true then
 local Text ='*‹ تم اختيار بصـمةه صوتيه لك استمتع عزيزي 💞 ›*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- اضغط هنا للمسح.',callback_data=msg.sender_user_id_..":Delete:del"}},
+{{text = '- اضغط هنا للمسح.',callback_data="/HelP"}},
 {{text = '‹ ѕᴏụʀᴄᴇ : ᴡᴀᴀᴅ ›.',url="t.me/nnnnBn"}},
 }
 local msg_id = msg.id_/2097152/0.5
@@ -9816,8 +9816,11 @@ https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. ms
 end
 end
 end
+if DAata =="/HelP" and Mod(msg) and tonumber(msg.reply_to_message_id_) > 0 then
+DeleteMessage(msg.chat_id_,{[0] = tonumber(msg.reply_to_message_id_),msg.id_})   
+end
 if text == '/aian' or text == '/free' or text == '/kian' then  
-Text = "اهلا بك عزيزي الخرا "
+Text = "اهلا بك عزيزي/nانا بوت حمايه المجموعات/nتفعيلي سهل جدا قم برفعي مشرف وارسل فعيل بعدها/nسيتم رفع الادمنيه بشكل تلقائي"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '𓅛 ︙ TEAM WAAD ',url="t.me/nnnnbn/906"}},
