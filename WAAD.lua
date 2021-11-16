@@ -9565,6 +9565,14 @@ send(msg.chat_id_, msg.id_, ' *᥀︙الان يمكنك ارسال الكليش
 database:set(bot_id..'help10'..msg.sender_user_id_,'true')
 return false 
 end
+if DataText and DataText:match('/HideHelpList:(.*)') then
+local Rio = DataText:match('/HideHelpList:(.*)')
+if tonumber(Rio) == tonumber(data.sender_user_id_) then
+EditMsg(Chat_Id2, Msg_Id2, "᥀︙تم اخفاء كليشة الاوامر") 
+else
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("᥀ عذرا الامر ليس لك .")..'&show_alert=true')
+end
+end
 if text == 'الاوامر' and Mod(msg) then
 local help_text = database:get(bot_id..'help_text')
 Text = [[
@@ -9800,7 +9808,7 @@ if audios.Info == true then
 local Text ='*‹ تم اختيار بصـمةه صوتيه لك استمتع عزيزي 💞 ›*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- اضغط هنا للمسح.',callback_data=msg.sender_user_id_..":cancelRd:del"}},
+{{text = '- اضغط هنا للمسح.',callback_data="/HideHelpList"}},
 {{text = '‹ ѕᴏụʀᴄᴇ : ᴡᴀᴀᴅ ›.',url="t.me/nnnnBn"}},
 }
 local msg_id = msg.id_/2097152/0.5
