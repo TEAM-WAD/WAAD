@@ -9808,13 +9808,22 @@ if audios.Info == true then
 local Text ='*‹ تم اختيار بصـمةه صوتيه لك استمتع عزيزي 💞 ›*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- اضغط هنا للمسح.',callback_data="/HideHelpList:"}},
+{{text = '- اضغط هنا للمسح.',callback_data=msg.sender_user_id_..":Delete:del"}},
 {{text = '‹ ѕᴏụʀᴄᴇ : ᴡᴀᴀᴅ ›.',url="t.me/nnnnBn"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
+end
+if text == '/aian' or text == '/free' or text == '/kian' then  
+Text = "اهلا بك عزيزي الخرا "
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𓅛 ︙ TEAM WAAD ',url="t.me/nnnnbn/906"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/nnnnbn&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text == "شنو رئيك بهذا" or text == "شنو رئيك بهذ" then
 if not database:get(bot_id..'lock:add'..msg.chat_id_) then
