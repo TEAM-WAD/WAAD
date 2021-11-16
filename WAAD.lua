@@ -9817,7 +9817,7 @@ end
 end
 end
 if text == 'السورس' or text == 'سورس' or text == '/kian' or text == 'يا سورس' then  
-Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴡᴀᴀᴅ\n\nاسمك '..username..'\nايديك '..msg.sender_user_id_..'\n ")
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴡᴀᴀᴅ\n\nاسمك '..username..'\nبايو #bio\n "
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '𓅛 ︙ TEAM WAAD ',url="t.me/nnnnbn/906"}},
