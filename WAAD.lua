@@ -9808,7 +9808,7 @@ if audios.Info == true then
 local Text ='*‹ تم اختيار بصـمةه صوتيه لك استمتع عزيزي 💞 ›*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- اضغط هنا للمسح.',callback_data="/HideHelpList"}},
+{{text = '- اضغط هنا للمسح.',callback_data="/HideHelpList:"}},
 {{text = '‹ ѕᴏụʀᴄᴇ : ᴡᴀᴀᴅ ›.',url="t.me/nnnnBn"}},
 }
 local msg_id = msg.id_/2097152/0.5
