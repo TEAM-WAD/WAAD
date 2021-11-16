@@ -9816,9 +9816,8 @@ https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. ms
 end
 end
 end
-if text == '/aiano' and DevWAADW(msg) then 
-database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'اهلا بك عزيزي المطي نقلع منا ')
+if text == 'السورس' or text == 'سورس' or text == '/kian' or text == 'يا سورس' then  
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴡᴀᴀᴅ\n\nاسمك username#\nايديك id#\nرتبتك stast#"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '𓅛 ︙ TEAM WAAD ',url="t.me/nnnnbn/906"}},
