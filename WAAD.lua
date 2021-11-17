@@ -821,7 +821,8 @@ local keyboard = {
 {' ‹ السـوࢪس ›',' ‹ الـﻤطوڕ ›'},
 }
 send_inline_key(msg.chat_id_,bl,keyboard)
-else
+return false
+end end
 if text and text:match("^/start ph(.*)$") then
 Sf = text:match("^/start ph(.*)$")
 local list = database:smembers(bot_id.."filterphoto"..Sf)  
