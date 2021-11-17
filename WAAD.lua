@@ -9820,7 +9820,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. ms
 end
 end
 end
-if text == 'السورس' or text == 'سورس' or text == '/kian' or text == 'يا سورس' then
+if text == 'السورس' or text == '/ali' or text == '/start' or text == 'يا سورس' then
 Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴡᴀᴀᴅ\n\n انا بوت اسمي وعد\n ختصاصي حمايه الكروبات من التفليش\nيمكنك اضافتي لحمايه كروبك من  المخربين \n ارفعني مشرف في كروبك وارسل تفعيل فقط"
 keyboard = {} 
 keyboard.inline_keyboard = {
