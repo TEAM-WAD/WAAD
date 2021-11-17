@@ -9791,6 +9791,10 @@ https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. ms
 end
 end
 end
+if DAata == '/helo' then
+send(msg.chat_id_, msg.id_,' *᥀︙تم مسح رسائلك*'  )  
+database:del(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) 
+end
 if text == "غنيلي" and not database:get(bot_id.."sing:for:me"..msg.chat_id_) then
 data,res = https.request('https://vvvzvv.ml/amirVois/Teland.php')
 if res == 200 then
@@ -9799,7 +9803,7 @@ if audios.Info == true then
 local Text ='*‹ تم اختيار بصـمةه صوتيه لك استمتع عزيزي 💞 ›*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- اضغط هنا للمسح.',callback_data=msg.sender_user_id_..":DeleteMessage:del"}},
+{{text = '- اضغط هنا للمسح.',callback_data="\helo"}},
 {{text = '‹ ѕᴏụʀᴄᴇ : ᴡᴀᴀᴅ ›.',url="t.me/nnnnBn"}},
 }
 local msg_id = msg.id_/2097152/0.5
