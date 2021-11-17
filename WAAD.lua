@@ -9117,6 +9117,10 @@ get_id_text = get_id_text:gsub('#photos',photps)
 send(msg.chat_id_, msg.id_,'['..get_id_text..']')   
 else
 send(msg.chat_id_, msg.id_,'[\n ᥀︙ايديك ↫ '..msg.sender_user_id_..'\n ᥀︙معرفك ↫ '..username..'\n ᥀︙رتبتك ↫ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n ᥀︙موقعك ↫ '..rtpa..'\n ᥀︙تفاعلك ↫ '..Total_Msg(Msguser)..'\n ᥀︙رسائلك ↫ '..Msguser..'\n ᥀︙البايو ↫ '..getbioY..' \n ᥀︙السحكات ↫ '..edit..'\n ᥀︙نقاطك ↫ '..NUMPGAME..']\n')
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𓅛 ︙ TEAM WAAD ',url="t.me/nnnnbn/906"}},
+}              
 end
 end
 
