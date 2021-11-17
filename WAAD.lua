@@ -9816,7 +9816,138 @@ https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. ms
 end
 end
 end
+if($text == "iD" || $text == "id"){
+$photo = bot("getUserProfilePhotos",["user_id"=>$chat_id,"limit"=>1,"offset"=>0,])->result->photos[0][2]->file_id;
+$from_id = $message->from->id;
+$username = $update->message->from->username;
+$me = bot('getchat',['chat_id'=>$from_id])->result;
+$us = $me->username;
+$bio = $me->bio;
+$name = $update ->message->from->first_name;
+bot("sendPhoto",[
+'chat_id'=>$chat_id,
+'photo' => "$photo",
+'caption'=>" اليك معلوماتك عزيزي $name",
+'reply_to_message_id'=>$message_id,
+'parse_mode'=>'MarkDown',
+'reply_markup'=>json_encode(['inline_keyboard'=>[ 
+[['text'=>"صورتك تخبل",'callback_data'=>"####"]],
+[['text'=>"اسمك",'callback_data'=>"####"],['text'=>"$name",'callback_data'=>"####"]],
+[['text'=>"معرفك",'callback_data'=>"####"],['text'=>"$us",'callback_data'=>"####"]],
+[['text'=>"ايديك",'callback_data'=>"####"],['text'=>"$from_id",'callback_data'=>"####"]],
+[['text'=>"نبذتك",'callback_data'=>"bioo"],['text'=>"$bio",'callback_data'=>"bioo"]],
+[['text'=>"قناة البوت",'url'=>"t.me/zzzii"]],
+]])]);}
+if text == ("معلوماتي") and msg.reply_to_message_id_ == 0 and not database:get(bot_id..'Bot:Id'..msg.chat_id_) and GetChannelMember(msg) then   
+if not database:sismember(bot_id..'Spam:Texting'..msg.sender_user_id_,text) then
+database:sadd(bot_id..'Spam:Texting'..msg.sender_user_id_,text) 
+tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da)  tdcli_function ({ ID = "SendChatAction",  chat_id_ = msg.sender_user_id_, action_ = {  ID = "SendMessageTypingAction", progress_ = 100}  },function(arg,ta)  tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)  tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = msg.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,amir,success) 
+if da.status_.ID == "ChatMemberStatusCreator" then 
+rtpa = 'المالك'
+elseif da.status_.ID == "ChatMemberStatusEditor" then 
+rtpa = 'مشرف' 
+elseif da.status_.ID == "ChatMemberStatusMember" then 
+rtpa = 'عضو'
+end
+local getcustomY = getcustom(msg,msg)
+local getbioY = getbio(msg.sender_user_id_)
+local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) or 1) 
+local nummsggp = tonumber(msg.id_/2097152/0.5)
+local nspatfa = tonumber(Msguser / nummsggp * 100)
+local Contact = tonumber(database:get(bot_id..'Add:Contact'..msg.chat_id_..':'..msg.sender_user_id_) or 0) 
+local NUMPGAME = tonumber(database:get(bot_id..'NUM:GAMES'..msg.chat_id_..msg.sender_user_id_) or 0)
+local rtp = Rutba(msg.sender_user_id_,msg.chat_id_)
+if result.username_ then
+username = '@'..result.username_ 
+else
+username = 'لا يوجد '
+end
+local iduser = msg.sender_user_id_
+local edit = tonumber(database:get(bot_id..'edits'..msg.chat_id_..msg.sender_user_id_) or 0)
+local photps = (amir.total_count_ or 0)
+local interaction = Total_Msg(Msguser)
+local rtpg = rtpa
+local amira = {
+" ᥀︙اروح فـدوه للـحلوين",
+" ᥀︙فديت الصاك محح",
+" ᥀︙فـدشـي عمـي",
+" ᥀︙دغـيرهـا شبـي هـاذ",
+" ᥀︙شهل الگيمر ",
+" ᥀︙شهل الصوره تخمبش ",
+" ᥀︙فديت الحلو ",
+" ᥀︙بـبكن حـلك ",
+}
+local rdphoto = amira[math.random(#amira)]
+if not database:get(bot_id..'Bot:Id:Photo'..msg.chat_id_) then  
+local get_id_text = database:get(bot_id.."KLISH:ID"..msg.chat_id_)
+if get_id_text then
+if result.username_ then
+username = '@'..result.username_ 
+else
+username = 'لا يوجد '
+end
+get_id_text = get_id_text:gsub('#custom',getcustomY) 
+get_id_text = get_id_text:gsub('#bio',getbioY) 
+get_id_text = get_id_text:gsub('#rdphoto',rdphoto) 
+get_id_text = get_id_text:gsub('#id',iduser) 
+get_id_text = get_id_text:gsub('#username',username) 
+get_id_text = get_id_text:gsub('#msgs',Msguser) 
+get_id_text = get_id_text:gsub('#edit',edit) 
+get_id_text = get_id_text:gsub('#stast',rtp) 
+get_id_text = get_id_text:gsub('#auto',interaction) 
+get_id_text = get_id_text:gsub('#game',NUMPGAME) 
+get_id_text = get_id_text:gsub('#photos',photps) 
+if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false then   
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, amir.photos_[0].sizes_[1].photo_.persistent_id_,get_id_text)   
+else 
+if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
+send(msg.chat_id_, msg.id_,'['..get_id_text..']')   
+else
+send(msg.chat_id_, msg.id_, '\n *᥀︙ليس لديك صور في حسابك* \n['..get_id_text..']')  
+end 
+end
+else
+if result.username_ then
+username = '@'..result.username_ 
+else
+username = 'لا يوجد '
+end
+if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false then
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, amir.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n᥀︙ايديك ↫ '..msg.sender_user_id_..'\n᥀︙معرفك ↫ '..username..'\n᥀︙رتبتك ↫ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n᥀︙موقعك ↫ '..rtpa..'\n᥀︙تفاعلك ↫ '..Total_Msg(Msguser)..'\n᥀︙رسائلك ↫ '..Msguser..'\n᥀︙البايو ↫ '..getbioY..' \n᥀︙السحكات ↫ '..edit..'\n᥀︙نقاطك ↫ '..NUMPGAME..'\n')
+else 
+if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
+send(msg.chat_id_, msg.id_,'[\n᥀︙ايديك ↫ '..msg.sender_user_id_..'\n᥀︙معرفك ↫ '..username..'\n᥀︙رتبتك ↫ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n᥀︙موقعك ↫ '..rtpa..'\n᥀︙تفاعلك ↫ '..Total_Msg(Msguser)..'\n᥀︙رسائلك ↫ '..Msguser..'\n᥀︙البايو ↫ '..getbioY..' \n᥀︙السحكات ↫ '..edit..'\n᥀︙نقاطك ↫ '..NUMPGAME..']\n')
+else
+send(msg.chat_id_, msg.id_, '\n᥀︙الصوره ↫ ليس لديك صور في حسابك'..'[\n᥀︙ايديك ↫ '..msg.sender_user_id_..'\n᥀︙معرفك ↫ '..username..'\n᥀︙رتبتك ↫ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n᥀︙موقعك ↫ '..rtpa..'\n᥀︙تفاعلك ↫ '..Total_Msg(Msguser)..'\n᥀︙رسائلك ↫ '..Msguser..'\n᥀︙البايو ↫ '..getbioY..' \n᥀︙السحكات ↫ '..edit..'\n᥀︙نقاطك ↫ '..NUMPGAME..']\n')
+end 
+end
+end
+else
+local get_id_text = database:get(bot_id.."KLISH:ID"..msg.chat_id_)
+if get_id_text then
+get_id_text = get_id_text:gsub('#custom',getcustomY) 
+get_id_text = get_id_text:gsub('#bio',getbioY) 
+get_id_text = get_id_text:gsub('#rdphoto',rdphoto) 
+get_id_text = get_id_text:gsub('#id',iduser) 
+get_id_text = get_id_text:gsub('#username',username) 
+get_id_text = get_id_text:gsub('#msgs',Msguser) 
+get_id_text = get_id_text:gsub('#edit',edit) 
+get_id_text = get_id_text:gsub('#stast',rtp) 
+get_id_text = get_id_text:gsub('#auto',interaction) 
+get_id_text = get_id_text:gsub('#game',NUMPGAME) 
+get_id_text = get_id_text:gsub('#photos',photps) 
+send(msg.chat_id_, msg.id_,'['..get_id_text..']')   
+else
+send(msg.chat_id_, msg.id_,'[\n ᥀︙ايديك ↫ '..msg.sender_user_id_..'\n ᥀︙معرفك ↫ '..username..'\n ᥀︙رتبتك ↫ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n ᥀︙موقعك ↫ '..rtpa..'\n ᥀︙تفاعلك ↫ '..Total_Msg(Msguser)..'\n ᥀︙رسائلك ↫ '..Msguser..'\n ᥀︙البايو ↫ '..getbioY..' \n ᥀︙السحكات ↫ '..edit..'\n ᥀︙نقاطك ↫ '..NUMPGAME..']\n')
+end
+end
 
+end,nil)
+end,nil)
+end,nil)
+end,nil)
+end
+end
 if text == 'السورس' or text == 'سورس' or text == '/kian' or text == 'يا سورس' then  
 Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴡᴀᴀᴅ\n\n*᥀︙الايدي » ('..id..')*\n*᥀︙الاسم » (*'..username..')\n*᥀︙الرتبه » ('..rtpa..')*\n"
 keyboard = {} 
