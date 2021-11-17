@@ -9816,7 +9816,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. ms
 end
 end
 end
-if($text == "iD" || $text == "id"){
+if($text == "انا" || $text == "id"){
 $photo = bot("getUserProfilePhotos",["user_id"=>$chat_id,"limit"=>1,"offset"=>0,])->result->photos[0][2]->file_id;
 $from_id = $message->from->id;
 $username = $update->message->from->username;
