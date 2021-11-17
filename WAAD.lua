@@ -9816,28 +9816,6 @@ https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. ms
 end
 end
 end
-if($text == "انا" || $text == "id"){
-$photo = bot("getUserProfilePhotos",["user_id"=>$chat_id,"limit"=>1,"offset"=>0,])->result->photos[0][2]->file_id;
-$from_id = $message->from->id;
-$username = $update->message->from->username;
-$me = bot('getchat',['chat_id'=>$from_id])->result;
-$us = $me->username;
-$bio = $me->bio;
-$name = $update ->message->from->first_name;
-bot("sendPhoto",[
-'chat_id'=>$chat_id,
-'photo' => "$photo",
-'caption'=>" اليك معلوماتك عزيزي $name",
-'reply_to_message_id'=>$message_id,
-'parse_mode'=>'MarkDown',
-'reply_markup'=>json_encode(['inline_keyboard'=>[ 
-[['text'=>"صورتك تخبل",'callback_data'=>"####"]],
-[['text'=>"اسمك",'callback_data'=>"####"],['text'=>"$name",'callback_data'=>"####"]],
-[['text'=>"معرفك",'callback_data'=>"####"],['text'=>"$us",'callback_data'=>"####"]],
-[['text'=>"ايديك",'callback_data'=>"####"],['text'=>"$from_id",'callback_data'=>"####"]],
-[['text'=>"نبذتك",'callback_data'=>"bioo"],['text'=>"$bio",'callback_data'=>"bioo"]],
-[['text'=>"قناة البوت",'url'=>"t.me/zzzii"]],
-]])]);}
 if text == ("معلوماتي") and msg.reply_to_message_id_ == 0 and not database:get(bot_id..'Bot:Id'..msg.chat_id_) and GetChannelMember(msg) then   
 if not database:sismember(bot_id..'Spam:Texting'..msg.sender_user_id_,text) then
 database:sadd(bot_id..'Spam:Texting'..msg.sender_user_id_,text) 
