@@ -9825,7 +9825,6 @@ send(msg.chat_id_, msg.id_,' *᥀︙ايديك »* '..msg.sender_user_id_)
 send(msg.chat_id_, msg.id_,'*᥀︙ لقبك هو :* '..getcustom(msg,msg))
 end
 if text == 'السورس' or text == 'سورس' or text == '/kian' or text == 'يا سورس' then
-local rtp = Rutba(msg.sender_user_id_,msg.chat_id_)  
 Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴡᴀᴀᴅ\n\nرتبتك  '..msg.sender_user_id_"
 keyboard = {} 
 keyboard.inline_keyboard = {
