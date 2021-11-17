@@ -9821,7 +9821,7 @@ end
 end
 end
 if text == 'معلوماتي' then
-send(msg.chat_id_, msg.id_,' *᥀︙ايديك »* '..msg.sender_user_id_)
+send(msg.chat_id_, msg.id_,' *᥀︙ايديك »* '..msg.sender_user_id_)\n
 send(msg.chat_id_, msg.id_,'*᥀︙ لقبك هو :* '..getcustom(msg,msg))
 end
 if text == 'السورس' or text == 'سورس' or text == '/kian' or text == 'يا سورس' then
