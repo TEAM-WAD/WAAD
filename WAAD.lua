@@ -9821,7 +9821,9 @@ end
 end
 end
 if text == 'السورس' or text == 'سورس' or text == '/kian' or text == 'يا سورس' then
-Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴡᴀᴀᴅ\n\nرتبتك msgs# "
+local Text_Rand = List[math.random(#List)]
+database:set(bot_id.."KLISH:ID"..msg.chat_id_,Text_Rand)
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴡᴀᴀᴅ\n\nرتبتك  #stast "
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '𓅛 ︙ TEAM WAAD ',url="t.me/nnnnbn/906"}},
