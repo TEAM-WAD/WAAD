@@ -9820,10 +9820,6 @@ https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. ms
 end
 end
 end
-if text == 'معلوماتي' then
-send(msg.chat_id_, msg.id_,' *᥀︙ايديك »* '..msg.sender_user_id_)\n
-send(msg.chat_id_, msg.id_,'*᥀︙ لقبك هو :* '..getcustom(msg,msg))
-end
 if text == 'السورس' or text == 'سورس' or text == '/kian' or text == 'يا سورس' then
 Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴡᴀᴀᴅ\n\nرتبتك  '..msg.sender_user_id_"
 keyboard = {} 
