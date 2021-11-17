@@ -822,20 +822,6 @@ local keyboard = {
 }
 send_inline_key(msg.chat_id_,bl,keyboard)
 else
-if not database:get(bot_id..'Start:Time'..msg.sender_user_id_) then
-local start = database:get(bot_id.."Start:Bot")  
-if start then 
-SourceWAADr = start
-else
-Namot = (database:get(bot_id..'Name:Bot') or 'وعد')
-SourceWAADr = '*᥀︙اهلا عزيزي*\n*᥀︙انا بوت اسمي '..Namot..'*\n*᥀︙اختصاصي حمايه الكروبات*\n*᥀︙من تكرار والسبام والتوجيه والخ…*\n*᥀︙لتفعيلي اتبع الاخطوات…↓*\n*᥀︙اضفني الي مجموعتك وقم بترقيتي ادمن واكتب كلمه { تفعيل }  ويستطيع »{ منشئ او المشرفين } بتفعيل فقط*\n᥀︙[قناة سورس البوت](http://t.me/nnnnbn)'
-end
-send(msg.chat_id_, msg.id_, SourceWAADr) 
-end
-end
-database:setex(bot_id..'Start:Time'..msg.sender_user_id_,300,true)
-return false
-end
 if text and text:match("^/start ph(.*)$") then
 Sf = text:match("^/start ph(.*)$")
 local list = database:smembers(bot_id.."filterphoto"..Sf)  
