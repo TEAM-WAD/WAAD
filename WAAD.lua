@@ -9829,28 +9829,16 @@ end
 end
 end
 end
-if text == "/start" or text == "مطور" then
-local TEXT_SUD = database:get(bot_id..'ToBaK:TEXT_SUDO')
-if TEXT_SUDO then 
-send(msg.chat_id_, msg.id_,TEXT_SUDO)
-else
-tdcli_function ({ID = "GetUser",user_id_ = SUDO,},function(arg,result) 
-tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = SUDO,offset_ = 0,limit_ = 1},function(arg,getpro) 
-if getpro.photos_[0] then
-Text = "*᥀︙ Dev Name ↬ * ["..result.first_name_.."](T.me/"..result.username_..")\n*᥀︙ Dev User ↬* [@"..result.username_.."]\n*᥀︙ Dev id ↬* ["..result.id_.."]"
-keyboard = {}
-keyboard.inline_keyboard = {{{text = ''..result.first_name_..'', url = "https://t.me/"..result.username_..""}}}
-{{text = 'مطـور البـوت',url="t.me/"..result.username_ or WaTaNTeaM},
+if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴡᴀᴀᴅ\n\n[᥀︙  ᴡᴀᴀᴅ ᴄʜᴀɴɴᴇʟ](http://t.me/nnnnBn)\n\n[᥀︙  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/nnnnbn)\n\n[᥀︙  ᴡᴀᴀᴅ ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/VvTVv2)\n\n[᥀︙  ʙᴏᴛ ᴡᴀᴀᴅ](http://t.me/tws_waadbot)"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𓅛 ︙ TEAM WAAD ',url="t.me/nnnnbn/906"}},
+{{text = 'مطـور البـوت',url="text = "..result.first_name_..'', url = "https://t.me/"..result.username_..""},
 {text = 'قناة السورس',url="t.me/WaTaNTeaM"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Text)..'&photo='..getpro.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-else
-send(msg.chat_id_, msg.id_,Name,1, 'md')
-end
-end,nil)   
-end,nil)   
-end
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/nnnnbn&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text == "شنو رئيك بهذا" or text == "شنو رئيك بهذ" then
 if not database:get(bot_id..'lock:add'..msg.chat_id_) then
