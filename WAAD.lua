@@ -823,8 +823,9 @@ local keyboard = {
 send_inline_key(msg.chat_id_,bl,keyboard)
 return false
 end end
-if text == 'العاب السورس' then
-local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك قسم التعطيل والتفعيل\n✯︙اختر من الازرار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/WaTaNTeaM)'
+if text == '/playing' and GetChannelMember(msg) then  
+if DevWAADW(msg) then
+local bl = ' * اهلا بك عزيزي  آلمـطـور*\n*آنت المطور الاساسي هنا في البوت  *\n┉  ┉  ┉  ┉  ┉  ┉  ┉  ┉ء\n*تسـتطـيع‌‏ التحڪم باوامر الخاصه في البوت*\n*من خلال الكيبورد الخاص في البوت ولايمكن لغيرك اضهار هذه الاوامر  الخاصه بك*\n*قناة سورس البوت *[اضغط هنا](t.me/nnnnbn)'
 local keyboard = {
 {'تعطيل التواصل ✯','تفعيل التواصل ✯'},
 {'تفعيل البوت الخدمي ✯','تعطيل البوت الخدمي ✯'},
