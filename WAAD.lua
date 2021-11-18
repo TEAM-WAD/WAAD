@@ -823,7 +823,7 @@ local keyboard = {
 send_inline_key(msg.chat_id_,bl,keyboard)
 return false
 end end
-if text == '/playing' then
+if text == 'العاب السورس' then
 local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك قسم التعطيل والتفعيل\n✯︙اختر من الازرار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/WaTaNTeaM)'
 local keyboard = {
 {'تعطيل التواصل ✯','تفعيل التواصل ✯'},
