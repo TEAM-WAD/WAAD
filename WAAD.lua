@@ -9791,10 +9791,17 @@ https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. ms
 end
 end
 end
-if DAata == '/helo' then
-send(msg.chat_id_, msg.id_,' *᥀︙تم مسح رسائلك*'  )  
-database:del(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) 
-end
+if text == '/playing' then
+local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك قسم التعطيل والتفعيل\n✯︙اختر من الازرار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/WaTaNTeaM)'
+local keyboard = {
+{'تعطيل التواصل ✯','تفعيل التواصل ✯'},
+{'تفعيل البوت الخدمي ✯','تعطيل البوت الخدمي ✯'},
+{'تفعيل الاذاعه ✯','تعطيل الاذاعه'},
+{'رجوع ✯'},
+}
+send_inline_key(msg.chat_id_,bl,keyboard)
+return false
+end end
 if text == "غنيلي" and not database:get(bot_id.."sing:for:me"..msg.chat_id_) then
 data,res = https.request('https://black-source.tk/BlackTeAM/audios.php')
 if res == 200 then
