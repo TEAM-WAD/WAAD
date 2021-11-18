@@ -9815,8 +9815,8 @@ if text == '/aa' or text == '/ali' or text == '/start' or text == '/pop' then
 Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴡᴀᴀᴅ\n\n[᥀︙  ᴡᴀᴀᴅ ᴄʜᴀɴɴᴇʟ](http://t.me/nnnnBn)\n\n[᥀︙  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/nnnnbn)\n\n[᥀︙  ᴡᴀᴀᴅ ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/VvTVv2)\n\n[᥀︙  ʙᴏᴛ ᴡᴀᴀᴅ](http://t.me/tws_waadbot)"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𓅛 ︙ TEAM WAAD ',url="t.me/nnnnbn/906"}},
-{{text = 'مطور البوت',url="http://t.me/"..result.username_..""},{text = 'سورس ',url="t.me/nnnnbn/906"}},
+{{text = '⌗ : اضفني لڪࢪوبك  .',url="http://t.me/test118bot?startgroup=new"}},
+{{text = '⌗ : ﻤـطوࢪ البوت  .',url="http://t.me/"},{text = '⌗ : الـسوࢪس  . ',url="t.me/nnnnbn"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/nnnnbn&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
