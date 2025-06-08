@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>خدمات التواصل</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- القائمة الثلاث خطوط -->
-  <div id="menuIcon" class="menu-icon" onclick="toggleMenu()">&#9776;</div>
 
-  <!-- القائمة الجانبية -->
-  <nav id="sideMenu" class="side-menu">
-    <ul>
-      <li>من نحن</li>
-      <li>تواصل مع الدعم</li>
-      <li>التحديثات</li>
-      <li onclick="showLogin()">تسجيل دخول المطور</li>
-    </ul>
-  </nav>
+  <!-- أيقونة الثلاث خطوط -->
+  <div id="menuIcon" class="menu-icon" onclick="openSidebar()">
+    &#9776;
+  </div>
+
+  <!-- النافذة الجانبية -->
+  <div id="sidebar" class="sidebar">
+    <button class="closebtn" onclick="closeSidebar()">×</button>
+    <nav class="sidebar-nav">
+      <a href="#" onclick="alert('صفحة من نحن قريبا')">من نحن</a>
+      <a href="#" onclick="alert('صفحة التحديثات قريبا')">تحديثات</a>
+      <a href="#" onclick="alert('تواصل مع الدعم قريبا')">تواصل مع الدعم</a>
+      <button class="login-btn" onclick="showLogin()">تسجيل الدخول</button>
+    </nav>
+  </div>
 
   <header>
     <h1 id="mainTitle" class="fade-in">هذه هي الخدمات التي يقدمها الموقع</h1>
@@ -26,29 +30,30 @@
 
   <main>
     <div class="container">
-      <div class="button" onclick="alert('سيتم فتح خدمة إنستقرام قريباً')">
-        <span>خدمات إنستقرام</span>
+      <div class="button" onclick="alert('خدمة إنستقرام - قريبا')">
+        خدمات إنستقرام
       </div>
-      <div class="button" onclick="alert('سيتم فتح خدمة فيسبوك قريباً')">
-        <span>خدمات فيسبوك</span>
+      <div class="button" onclick="alert('خدمة فيسبوك - قريبا')">
+        خدمات فيسبوك
       </div>
-      <div class="button" onclick="alert('سيتم فتح خدمة تيك توك قريباً')">
-        <span>خدمات تيك توك</span>
+      <div class="button" onclick="alert('خدمة تيك توك - قريبا')">
+        خدمات تيك توك
       </div>
-      <div class="button" onclick="alert('سيتم فتح خدمة تيليجرام قريباً')">
-        <span>خدمات تيليجرام</span>
+      <div class="button" onclick="alert('خدمة تيليجرام - قريبا')">
+        خدمات تيليجرام
       </div>
     </div>
   </main>
 
-  <!-- مودال تسجيل دخول المطور -->
+  <!-- مودال تسجيل الدخول -->
   <div id="loginModal" class="modal">
     <div class="modal-content">
-      <h3>تسجيل دخول المطور</h3>
-      <input type="text" id="devUsername" placeholder="اسم المستخدم" />
-      <input type="password" id="devPassword" placeholder="كلمة المرور" />
-      <button onclick="loginDev()">دخول</button>
+      <h3>تسجيل الدخول</h3>
+      <input type="text" id="username" placeholder="اسم المستخدم" />
+      <input type="password" id="password" placeholder="كلمة المرور" />
+      <button onclick="login()">دخول</button>
       <p id="loginMessage" class="login-message"></p>
+      <button onclick="hideLogin()" style="margin-top:15px; background:#777;">إلغاء</button>
     </div>
   </div>
 
