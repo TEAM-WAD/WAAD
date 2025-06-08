@@ -1,83 +1,51 @@
 // إشعار ترحيبي
 // القائمة الجانبية
 // القائمة الجانبية
-const menuIcon = document.getElementById("menuIcon");
-const sideMenu = document.getElementById("sideMenu");
-
-function toggleMenu() {
-  if (sideMenu.classList.contains("open")) {
-    sideMenu.classList.remove("open");
-  } else {
-    sideMenu.classList.add("open");
-  }
+// فتح النافذة الجانبية
+function openSidebar() {
+  document.getElementById("sidebar").classList.add("open");
 }
 
-// تسجيل دخول المطور
+// غلق النافذة الجانبية
+function closeSidebar() {
+  document.getElementById("sidebar").classList.remove("open");
+}
+
+// عرض مودال تسجيل الدخول
 function showLogin() {
+  closeSidebar();
   document.getElementById("loginModal").style.display = "flex";
 }
 
+// إخفاء مودال تسجيل الدخول
 function hideLogin() {
   document.getElementById("loginModal").style.display = "none";
+  clearLoginFields();
 }
 
-function loginDev() {
-  const username = document.getElementById("devUsername").value.trim();
-  const password = document.getElementById("devPassword").value.trim();
+// تنظيف الحقول ورسالة الخطأ
+function clearLoginFields() {
+  document.getElementById("username").value = "";
+  document.getElementById("password").value = "";
+  document.getElementById("loginMessage").textContent = "";
+}
+
+// عملية تسجيل الدخول (مستخدم أو مطور)
+function login() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
   const message = document.getElementById("loginMessage");
 
+  // بيانات تسجيل دخول المطور
   if (username === "dev2025" && password === "dev2025") {
     message.style.color = "green";
-    message.textContent = "تم تسجيل الدخول بنجاح ✅";
+    message.textContent = "تم تسجيل دخول المطور بنجاح ✅";
+    localStorage.setItem("devLoggedIn", "true");
     setTimeout(() => {
       hideLogin();
-      // تخزين حالة تسجيل الدخول في التخزين المحلي
-      localStorage.setItem("devLoggedIn", "true");
       window.location.href = "developer.html";
     }, 1200);
-  } else {
-    message.style.color = "red";
-    message.textContent = "اسم المستخدم أو كلمة المرور خاطئة ❌";
+    return;
   }
-}
 
-// تأكيد تسجيل الخروج من لوحة تحكم المطور
-function logoutDev() {
-  localStorage.removeItem("devLoggedIn");
-  alert("تم تسجيل الخروج");
-  window.location.href = "index.html";
-}
-
-// منطق قفل الموقع (تخزين حالة الصيانة في localStorage)
-function toggleMaintenance() {
-  const maintenance = localStorage.getItem("maintenanceMode");
-  if (maintenance === "on") {
-    localStorage.setItem("maintenanceMode", "off");
-    alert("تم إلغاء وضع الصيانة");
-  } else {
-    localStorage.setItem("maintenanceMode", "on");
-    alert("تم تفعيل وضع الصيانة");
-  }
-  // إعادة تحميل الصفحة لتفعيل الوضع
-  location.reload();
-}
-
-// عرض إحصائيات (أرقام وهمية لمثال)
-function showStats() {
-  document.getElementById("stats").style.display = "block";
-  // بيانات وهمية يمكن استبدالها ببيانات حقيقية من السيرفر
-  document.getElementById("visitorCount").textContent = 1200;
-  document.getElementById("requestCount").textContent = 350;
-}
-
-// عند تحميل الصفحة الرئيسية: التحقق من وضع الصيانة
-window.onload = () => {
-  if (localStorage.getItem("maintenanceMode") === "on") {
-    // تحويل المستخدم لصفحة الصيانة
-    window.location.href = "maintenance.html";
-  }
-  // التحقق من تسجيل دخول المطور
-  if (localStorage.getItem("devLoggedIn") === "true" && window.location.pathname.endsWith("index.html")) {
-    // لو هو في الصفحة الرئيسية ومسجل دخول يبقى كذلك
-  }
-};
+  // بيانات تسجيل دخول المستخدم العادي (
