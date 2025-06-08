@@ -1,76 +1,200 @@
-/* موقع أيقونة الثلاث خطوط في أعلى يسار الصفحة */
-#menu-icon {
+/* عام */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; padding: 0;
+  background: linear-gradient(to bottom, #e0eafc, #cfdef3);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* القائمة الثلاث خطوط */
+.menu-icon {
   position: fixed;
-  top: 15px;
-  left: 15px;
+  top: 10px;
+  left: 10px;
   font-size: 28px;
   cursor: pointer;
   z-index: 1000;
-  user-select: none;
-  color: #007bff;
-  font-weight: bold;
 }
 
-/* نافذة القائمة الجانبية أو المنبثقة */
-.popup-menu {
+/* القائمة الجانبية */
+.side-menu {
   position: fixed;
-  top: 60px;
-  left: 15px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  padding: 20px 30px;
+  top: 0;
+  left: -250px;
+  width: 230px;
+  height: 100%;
+  background-color: #3f51b5;
+  color: white;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  transition: left 0.3s ease;
   z-index: 999;
-  width: 220px;
-  font-family: 'Cairo', sans-serif;
-  font-size: 18px;
-  color: #333;
-  user-select: none;
-  animation: fadeInMenu 0.3s ease forwards;
 }
 
-/* اخفاء النافذة */
-.hidden {
-  display: none;
+.side-menu.open {
+  left: 0;
 }
 
-/* قائمة العناصر */
-.popup-menu ul {
+.side-menu ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 15px 0;
 }
 
-.popup-menu ul li {
-  margin-bottom: 15px;
-  font-weight: 600;
-  cursor: default;
-}
-
-/* زر الإغلاق */
-.popup-menu button {
-  background: #007bff;
-  border: none;
-  color: white;
-  font-weight: bold;
-  padding: 8px 15px;
-  border-radius: 7px;
+.side-menu li {
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
 }
 
-.popup-menu button:hover {
-  background-color: #0056b3;
+.side-menu li:hover {
+  background-color: #2c387e;
 }
 
-/* تأثير دخول النافذة */
-@keyframes fadeInMenu {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* عنوان رئيسي */
+header h1 {
+  margin: 70px 0 30px;
+  color: #1769aa;
+  font-weight: bold;
+  font-size: 1.8rem;
+  user-select: none;
+  text-align: center;
+}
+
+/* تأثير دخول */
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {opacity: 1;}
+}
+
+/* أزرار الخدمات */
+.container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.button {
+  background: #3f51b5;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  min-width: 160px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: #2c387e;
+}
+
+/* مودال تسجيل دخول المطور */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1500;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 25px 20px;
+  border-radius: 10px;
+  width: 320px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 80%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.modal-content button {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #2c387e;
+}
+
+.login-message {
+  margin-top: 10px;
+  min-height: 20px;
+}
+
+/* لوحة تحكم المطور */
+.dev-container {
+  max-width: 400px;
+  margin: 70px auto;
+  padding: 20px;
+  background: #f1f3f5;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.dev-container h2 {
+  margin-bottom: 20px;
+  color: #3f51b5;
+}
+
+.dev-container button {
+  width: 80%;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: #3f51b5;
+  color: white;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+.dev-container button:hover {
+  background-color: #2c387e;
+}
+
+/* صفحة الصيانة */
+.maintenance-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #1769aa;
+  user-select: none;
 }
