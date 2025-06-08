@@ -1,16 +1,37 @@
 /* عام */
+/* خلفية متحركة وصور تواصل */
+
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
-  margin: 0; padding: 0;
   background: linear-gradient(to bottom, #e0eafc, #cfdef3);
-  color: #333;
+  overflow-x: hidden;
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* القائمة الثلاث خطوط */
+@keyframes moveBackground {
+  0% {background-position: 0 0;}
+  100% {background-position: 1000px 0;}
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('https://i.ibb.co/9HgGdtK/insta.png'), url('https://i.ibb.co/7vGM0L7/facebook.png'), url('https://i.ibb.co/MZP3J3y/tiktok.png'), url('https://i.ibb.co/0D2vZZ3/telegram.png');
+  background-repeat: repeat-x;
+  background-size: 100px 100px;
+  background-position: 0 20%, 250px 60%, 500px 10%, 750px 70%;
+  animation: moveBackground 60s linear infinite;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* الثلاث خطوط */
 .menu-icon {
   position: fixed;
   top: 10px;
@@ -18,44 +39,80 @@ body {
   font-size: 28px;
   cursor: pointer;
   z-index: 1000;
+  user-select: none;
 }
 
-/* القائمة الجانبية */
-.side-menu {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 230px;
+/* النافذة الجانبية */
+.sidebar {
   height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1200;
+  top: 0;
+  left: 0;
+  background-color: #f7f9fc;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  border-right: 1px solid #ddd;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 20px;
+  font-size: 1.1rem;
+}
+
+.sidebar-nav a {
+  color: #1769aa;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+  color: #0d3a66;
+}
+
+.login-btn {
   background-color: #3f51b5;
   color: white;
-  padding: 60px 20px;
-  box-sizing: border-box;
-  transition: left 0.3s ease;
-  z-index: 999;
-}
-
-.side-menu.open {
-  left: 0;
-}
-
-.side-menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.side-menu li {
-  padding: 15px 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
+  max-width: 200px;
+  text-align: center;
+  transition: background 0.3s ease;
+  user-select: none;
 }
 
-.side-menu li:hover {
+.login-btn:hover {
   background-color: #2c387e;
 }
 
-/* عنوان رئيسي */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #444;
+  user-select: none;
+}
+
+/* عنوان الصفحة */
 header h1 {
   margin: 70px 0 30px;
   color: #1769aa;
@@ -101,7 +158,7 @@ header h1 {
   background: #2c387e;
 }
 
-/* مودال تسجيل دخول المطور */
+/* مودال تسجيل الدخول */
 .modal {
   display: none;
   position: fixed;
@@ -150,51 +207,4 @@ header h1 {
 .login-message {
   margin-top: 10px;
   min-height: 20px;
-}
-
-/* لوحة تحكم المطور */
-.dev-container {
-  max-width: 400px;
-  margin: 70px auto;
-  padding: 20px;
-  background: #f1f3f5;
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.dev-container h2 {
-  margin-bottom: 20px;
-  color: #3f51b5;
-}
-
-.dev-container button {
-  width: 80%;
-  padding: 15px;
-  margin: 10px 0;
-  font-size: 1rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 8px;
-  background-color: #3f51b5;
-  color: white;
-  transition: background 0.3s ease;
-  font-weight: bold;
-}
-
-.dev-container button:hover {
-  background-color: #2c387e;
-}
-
-/* صفحة الصيانة */
-.maintenance-message {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-  font-size: 1.5rem;
-  color: #1769aa;
-  user-select: none;
 }
