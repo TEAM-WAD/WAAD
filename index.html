@@ -8,44 +8,36 @@
 </head>
 <body>
 
-  <!-- أيقونة الثلاث خطوط -->
-  <div id="menuIcon" class="menu-icon" onclick="openSidebar()">
-    &#9776;
-  </div>
+  <!-- أيقونة القائمة -->
+  <div id="menuIcon" class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
 
-  <!-- النافذة الجانبية -->
+  <!-- الشريط الجانبي -->
   <div id="sidebar" class="sidebar">
-    <button class="closebtn" onclick="closeSidebar()">×</button>
+    <button class="closebtn" onclick="toggleSidebar()">×</button>
     <nav class="sidebar-nav">
-      <a href="#" onclick="alert('صفحة من نحن قريبا')">من نحن</a>
-      <a href="#" onclick="alert('صفحة التحديثات قريبا')">تحديثات</a>
-      <a href="#" onclick="alert('تواصل مع الدعم قريبا')">تواصل مع الدعم</a>
+      <a href="#">من نحن</a>
+      <a href="#">تحديثات</a>
+      <a href="#">تواصل مع الدعم</a>
       <button class="login-btn" onclick="showLogin()">تسجيل الدخول</button>
     </nav>
   </div>
 
+  <!-- العنوان -->
   <header>
-    <h1 id="mainTitle" class="fade-in">هذه هي الخدمات التي يقدمها الموقع</h1>
+    <h1 class="title fade-in">هذه هي الخدمات التي يقدمها الموقع</h1>
   </header>
 
+  <!-- الأزرار -->
   <main>
     <div class="container">
-      <div class="button" onclick="alert('خدمة إنستقرام - قريبا')">
-        خدمات إنستقرام
-      </div>
-      <div class="button" onclick="alert('خدمة فيسبوك - قريبا')">
-        خدمات فيسبوك
-      </div>
-      <div class="button" onclick="alert('خدمة تيك توك - قريبا')">
-        خدمات تيك توك
-      </div>
-      <div class="button" onclick="alert('خدمة تيليجرام - قريبا')">
-        خدمات تيليجرام
-      </div>
+      <div class="button">خدمات إنستقرام</div>
+      <div class="button">خدمات فيسبوك</div>
+      <div class="button">خدمات تيك توك</div>
+      <div class="button">خدمات تيليجرام</div>
     </div>
   </main>
 
-  <!-- مودال تسجيل الدخول -->
+  <!-- نافذة تسجيل الدخول -->
   <div id="loginModal" class="modal">
     <div class="modal-content">
       <h3>تسجيل الدخول</h3>
@@ -53,7 +45,7 @@
       <input type="password" id="password" placeholder="كلمة المرور" />
       <button onclick="login()">دخول</button>
       <p id="loginMessage" class="login-message"></p>
-      <button onclick="hideLogin()" style="margin-top:15px; background:#777;">إلغاء</button>
+      <button onclick="hideLogin()">إلغاء</button>
     </div>
   </div>
 
