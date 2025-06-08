@@ -2,46 +2,31 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>خدمات التواصل</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>موقع خدمات التواصل</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- أيقونة القائمة -->
-  <div id="menuIcon" class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
+  <div class="overlay"></div>
 
-  <!-- الشريط الجانبي -->
-  <div id="sidebar" class="sidebar">
-    <button class="closebtn" onclick="toggleSidebar()">×</button>
-    <nav class="sidebar-nav">
-      <a href="#">من نحن</a>
-      <a href="#">تحديثات</a>
-      <a href="#">تواصل مع الدعم</a>
-      <button class="login-btn" onclick="showLogin()">تسجيل الدخول</button>
-    </nav>
+  <!-- قائمة ثلاث خطوط -->
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <!-- القائمة الجانبية -->
+  <div id="sideMenu" class="side-menu">
+    <a href="#">تسجيل دخول</a>
+    <a href="#" onclick="toggleDarkMode()">الوضع الليلي</a>
+    <a href="#">من نحن</a>
+    <a href="#">التحديثات</a>
   </div>
 
-  <!-- العنوان -->
-  <h1 class="main-title">هذه هي الخدمات التي يقدمها الموقع</h1>
+  <h1 class="title">مرحباً بك في موقع خدمات التواصل</h1>
 
-  <!-- الأزرار -->
   <div class="container">
-    <div class="button">
-      <img src="https://i.imgur.com/2yaf2wb.png" alt="Instagram" />
-      <span>خدمات إنستقرام</span>
-    </div>
-    <div class="button">
-      <img src="https://i.imgur.com/TXbhzRS.png" alt="Facebook" />
-      <span>خدمات فيسبوك</span>
-    </div>
-    <div class="button">
-      <img src="https://i.imgur.com/V0V3bZy.png" alt="TikTok" />
-      <span>خدمات تيك توك</span>
-    </div>
-    <div class="button">
-      <img src="https://i.imgur.com/9fOCYkk.png" alt="Telegram" />
-      <span>خدمات تيليجرام</span>
-    </div>
+    <div class="button"><span>إنستقرام</span></div>
+    <div class="button"><span>فيسبوك</span></div>
+    <div class="button"><span>تيك توك</span></div>
+    <div class="button"><span>تيليجرام</span></div>
   </div>
 
   <script src="script.js"></script>
