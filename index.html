@@ -1,31 +1,47 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>خدمات التواصل</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
+
+  <!-- شريط إشعار -->
+  <div id="page-notification" class="notification-bar">
+    🔥 تم تحديث الموقع بخدمات جديدة!
+  </div>
+
+  <!-- إشعار ترحيبي -->
+  <div id="welcome-popup" class="popup">
+    <div class="popup-content">
+      <p>👋 أهلاً بك في موقعنا! استمتع بخدماتنا.</p>
+      <button onclick="hideWelcomePopup()">إغلاق</button>
+    </div>
+  </div>
+
+  <!-- العنوان الرئيسي -->
+  <h1 class="main-title">هذه هي الخدمات التي يقدمها الموقع</h1>
+
+  <!-- الأزرار -->
   <div class="container">
-    <div class="button" onclick="showPopup('خدمات إنستقرام')">
-      <img src="instagram.png" alt="Instagram" />
+    <div class="button" onclick="window.location.href='instagram.html'">
       <span>خدمات إنستقرام</span>
     </div>
-    <div class="button" onclick="showPopup('خدمات فيسبوك')">
-      <img src="facebook.png" alt="Facebook" />
+    <div class="button" onclick="showPopup('فيسبوك')">
       <span>خدمات فيسبوك</span>
     </div>
-    <div class="button" onclick="showPopup('خدمات تيك توك')">
-      <img src="tiktok.png" alt="TikTok" />
+    <div class="button" onclick="showPopup('تيك توك')">
       <span>خدمات تيك توك</span>
     </div>
-    <div class="button" onclick="showPopup('خدمات تيليجرام')">
-      <img src="telegram.png" alt="Telegram" />
+    <div class="button" onclick="showPopup('تيليجرام')">
       <span>خدمات تيليجرام</span>
     </div>
   </div>
 
+  <!-- نافذة منبثقة للخدمات غير الجاهزة -->
   <div id="popup" class="popup">
     <div class="popup-content">
       <p id="popup-text">قريباً سيفتح</p>
