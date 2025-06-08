@@ -1,210 +1,139 @@
-/* عام */
-/* خلفية متحركة وصور تواصل */
-
+/* خلفية متحركة */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #e0eafc, #cfdef3);
-  overflow-x: hidden;
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: url('https://i.imgur.com/d1XU9jP.gif') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
 }
 
-@keyframes moveBackground {
-  0% {background-position: 0 0;}
-  100% {background-position: 1000px 0;}
-}
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('https://i.ibb.co/9HgGdtK/insta.png'), url('https://i.ibb.co/7vGM0L7/facebook.png'), url('https://i.ibb.co/MZP3J3y/tiktok.png'), url('https://i.ibb.co/0D2vZZ3/telegram.png');
-  background-repeat: repeat-x;
-  background-size: 100px 100px;
-  background-position: 0 20%, 250px 60%, 500px 10%, 750px 70%;
-  animation: moveBackground 60s linear infinite;
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* الثلاث خطوط */
+/* أيقونة القائمة */
 .menu-icon {
   position: fixed;
   top: 10px;
   left: 10px;
-  font-size: 28px;
+  font-size: 30px;
   cursor: pointer;
-  z-index: 1000;
-  user-select: none;
+  z-index: 1001;
+  color: white;
 }
 
-/* النافذة الجانبية */
+/* الشريط الجانبي */
 .sidebar {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1200;
   top: 0;
   left: 0;
-  background-color: #f7f9fc;
+  background-color: rgba(0, 0, 0, 0.9);
   overflow-x: hidden;
   transition: 0.3s;
+  z-index: 1000;
   padding-top: 60px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-  border-right: 1px solid #ddd;
 }
-
 .sidebar.open {
   width: 250px;
 }
-
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding-left: 20px;
+  padding: 0 20px;
+}
+.sidebar-nav a,
+.sidebar-nav .login-btn {
+  padding: 10px 0;
   font-size: 1.1rem;
-}
-
-.sidebar-nav a {
-  color: #1769aa;
-  text-decoration: none;
-  cursor: pointer;
-  user-select: none;
-  transition: color 0.3s ease;
-}
-
-.sidebar-nav a:hover {
-  color: #0d3a66;
-}
-
-.login-btn {
-  background-color: #3f51b5;
   color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  max-width: 200px;
-  text-align: center;
-  transition: background 0.3s ease;
-  user-select: none;
+  text-decoration: none;
+  transition: 0.3s;
 }
-
-.login-btn:hover {
-  background-color: #2c387e;
+.sidebar-nav a:hover,
+.sidebar-nav .login-btn:hover {
+  color: #00d1ff;
 }
-
 .closebtn {
   position: absolute;
   top: 10px;
-  right: 15px;
-  font-size: 28px;
+  right: 20px;
+  font-size: 25px;
   cursor: pointer;
   background: none;
   border: none;
-  color: #444;
-  user-select: none;
+  color: white;
 }
 
-/* عنوان الصفحة */
-header h1 {
-  margin: 70px 0 30px;
-  color: #1769aa;
-  font-weight: bold;
-  font-size: 1.8rem;
-  user-select: none;
+/* العنوان */
+.title {
   text-align: center;
+  font-size: 1.3rem;
+  margin: 80px 20px 40px;
+  color: #ffffff;
 }
-
-/* تأثير دخول */
 .fade-in {
   animation: fadeIn 1.5s ease forwards;
   opacity: 0;
 }
-
 @keyframes fadeIn {
-  to {opacity: 1;}
+  to { opacity: 1; }
 }
 
-/* أزرار الخدمات */
+/* الأزرار */
 .container {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 40px;
+  flex-wrap: wrap;
 }
-
 .button {
-  background: #3f51b5;
-  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
   padding: 15px 30px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  user-select: none;
-  min-width: 160px;
-  text-align: center;
-  transition: background 0.3s ease;
+  transition: 0.3s;
+  border: 1px solid white;
 }
-
 .button:hover {
-  background: #2c387e;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 /* مودال تسجيل الدخول */
 .modal {
   display: none;
   position: fixed;
-  z-index: 1500;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  justify-content: center;
+  z-index: 1002;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
   align-items: center;
+  justify-content: center;
 }
-
 .modal-content {
-  background-color: #fff;
-  padding: 25px 20px;
+  background: #fff;
+  color: black;
+  padding: 20px;
   border-radius: 10px;
-  width: 320px;
-  box-sizing: border-box;
+  width: 300px;
   text-align: center;
 }
-
 .modal-content input {
-  width: 80%;
+  width: 90%;
   padding: 10px;
-  margin: 8px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
+  margin-bottom: 10px;
 }
-
 .modal-content button {
-  background-color: #3f51b5;
+  padding: 10px 20px;
+  background: #3f51b5;
   color: white;
   border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
   border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease;
 }
-
-.modal-content button:hover {
-  background-color: #2c387e;
-}
-
 .login-message {
-  margin-top: 10px;
   min-height: 20px;
+  margin-top: 5px;
+  font-weight: bold;
 }
