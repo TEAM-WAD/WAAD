@@ -2,127 +2,56 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>خدمات التواصل</title>
-  <style>
-    /* خلفية متدرجة */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #e0f0ff, #a0c8ff);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* النص الكبير باللون الأزرق، سطر طويل، غير قابل للضغط */
-    .typing-text {
-      font-size: 28px;
-      font-weight: bold;
-      color: #004080; /* أزرق غامق */
-      margin-top: 100px;
-      text-align: center;
-      opacity: 0;
-      animation: typingFadeIn 3s ease forwards;
-      white-space: nowrap; /* سطر طويل */
-      cursor: default;
-      user-select: none;
-      pointer-events: none;
-    }
-
-    @keyframes typingFadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* حاوية الأزرار */
-    .container {
-      margin-top: 60px;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 90%;
-      max-width: 700px;
-    }
-
-    /* أزرار الخدمات */
-    .button {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      border: 2px solid #004080;
-      border-radius: 12px;
-      padding: 15px 30px;
-      background-color: #d0e7ff;
-      color: #004080;
-      font-weight: bold;
-      font-size: 18px;
-      width: 160px;
-      transition: background-color 0.3s, color 0.3s;
-      user-select: none;
-      text-align: center;
-    }
-
-    .button:hover {
-      background-color: #004080;
-      color: #d0e7ff;
-    }
-
-    /* الصور داخل الأزرار */
-    .button img {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 10px;
-      filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
-    }
-
-    /* زر تم التحديث ثابت بالأسفل */
-    .fixed-update {
-      position: fixed;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #004080;
-      color: #d0e7ff;
-      font-weight: bold;
-      padding: 12px 40px;
-      border-radius: 30px;
-      user-select: none;
-      pointer-events: none; /* غير قابل للضغط */
-      box-shadow: 0 0 10px #004080aa;
-      font-size: 18px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- القائمة الثلاث خطوط -->
+  <div id="menuIcon" class="menu-icon" onclick="toggleMenu()">&#9776;</div>
 
-  <h1 class="typing-text">هذه هي الخدمات التي يقدمها الموقع</h1>
+  <!-- القائمة الجانبية -->
+  <nav id="sideMenu" class="side-menu">
+    <ul>
+      <li>من نحن</li>
+      <li>تواصل مع الدعم</li>
+      <li>التحديثات</li>
+      <li onclick="showLogin()">تسجيل دخول المطور</li>
+    </ul>
+  </nav>
 
-  <div class="container">
-    <div class="button" onclick="alert('خدمات إنستقرام قريباً')">
-      <img src="instagram.png" alt="Instagram" />
-      خدمات إنستقرام
+  <header>
+    <h1 id="mainTitle" class="fade-in">هذه هي الخدمات التي يقدمها الموقع</h1>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="button" onclick="alert('سيتم فتح خدمة إنستقرام قريباً')">
+        <span>خدمات إنستقرام</span>
+      </div>
+      <div class="button" onclick="alert('سيتم فتح خدمة فيسبوك قريباً')">
+        <span>خدمات فيسبوك</span>
+      </div>
+      <div class="button" onclick="alert('سيتم فتح خدمة تيك توك قريباً')">
+        <span>خدمات تيك توك</span>
+      </div>
+      <div class="button" onclick="alert('سيتم فتح خدمة تيليجرام قريباً')">
+        <span>خدمات تيليجرام</span>
+      </div>
     </div>
-    <div class="button" onclick="alert('خدمات فيسبوك قريباً')">
-      <img src="facebook.png" alt="Facebook" />
-      خدمات فيسبوك
-    </div>
-    <div class="button" onclick="alert('خدمات تيك توك قريباً')">
-      <img src="tiktok.png" alt="TikTok" />
-      خدمات تيك توك
-    </div>
-    <div class="button" onclick="alert('خدمات تيليجرام قريباً')">
-      <img src="telegram.png" alt="Telegram" />
-      خدمات تيليجرام
+  </main>
+
+  <!-- مودال تسجيل دخول المطور -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <h3>تسجيل دخول المطور</h3>
+      <input type="text" id="devUsername" placeholder="اسم المستخدم" />
+      <input type="password" id="devPassword" placeholder="كلمة المرور" />
+      <button onclick="loginDev()">دخول</button>
+      <p id="loginMessage" class="login-message"></p>
     </div>
   </div>
 
-  <div class="fixed-update">تم التحديث</div>
-
+  <script src="script.js"></script>
 </body>
 </html>
