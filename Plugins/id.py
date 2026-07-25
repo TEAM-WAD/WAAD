@@ -1066,10 +1066,9 @@ def set_id(c,m,k):
 # معالج زر إخفاء / حذف الرسالة
 # ==========================================
 
-@Client.on_callback_query(filters.regex("^delAdminMSG$"))
-async def handle_del_admin_msg(client: Client, callback_query: CallbackQuery):
+if m.data == "delAdminMSG":
     try:
-        await callback_query.answer()  # إيقاف مؤشر التحميل فوراً
-        await callback_query.message.delete()  # حذف الرسالة
+        m.answer()
     except Exception:
         pass
+    return m.message.delete()
