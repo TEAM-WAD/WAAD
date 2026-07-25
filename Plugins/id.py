@@ -266,7 +266,7 @@ def get_my_rank(c,m,k):
     
     # إنشاء الزر
     reply_markup = InlineKeyboardMarkup([
-        [InlineKeyboardButton("إخفاء ✖️", callback_data="hide_bot_msg")]
+        [InlineKeyboardButton("إخفاء ✖️", callback_data="‏delAdminMSG")]
     ])
     
     # إرسال الرسالة مباشرة مع الزر والرد على رسالة المستخدم
