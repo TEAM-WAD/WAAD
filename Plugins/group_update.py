@@ -11,6 +11,8 @@ from helpers.memes import *
 from pyrogram.raw.functions.users import GetFullUser
 from io import BytesIO
 from pyrogram.file_id import FileId, FileType, ThumbnailSource
+bot_r = ["نعم", "أهلاً بك", "تفضل"]
+AiEgyp_tbot = "bot"
 
 ###########################################################################
 ###########################################################################
