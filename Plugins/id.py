@@ -1062,13 +1062,17 @@ def set_id(c,m,k):
 # معالج زر الإخفاء (Callback Query Handler)
 # ==========================================
 
-@Client.on_callback_query(filters.regex("^hide_bot_msg$"))
-async def handle_hide_msg(c: Client, cb: CallbackQuery):
+@Client.on_callback_query(filters.regex("hide_bot_msg"))
+def handle_hide_msg(c, cb):
     try:
-        await cb.answer()  # إيقاف التحميل فوراً
-        await cb.message.delete()  # حذف الرسالة
+        cb.answer()
+        cb.message.delete()
     except Exception:
-        pass
+        try:
+            c.delete_messages(cb.message.chat.id, cb.message.id)
+        except Exception:
+            pass
+
 
 
 
