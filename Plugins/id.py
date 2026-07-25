@@ -259,11 +259,18 @@ def get_my_rank(c,m,k):
          return m.reply(text, disable_web_page_preview=True)
 
    if text == 'جهاتي':
-     if not r.get(f'{m.chat.id}TotalContacts{m.from_user.id}{hmshelp}'):
-       contacts = 0
-     else:
-       contacts = int(r.get(f'{m.chat.id}TotalContacts{m.from_user.id}{hmshelp}'))
-     return m.reply(f'{k} عدد جهاتك ↢ {contacts}')
+    if not r.get(f'{m.chat.id}TotalContacts{m.from_user.id}{hmshelp}'):
+        contacts = 0
+    else:
+        contacts = int(r.get(f'{m.chat.id}TotalContacts{m.from_user.id}{hmshelp}'))
+    
+    # إضافة زر الإخفاء الشفاف
+    reply_markup = InlineKeyboardMarkup([
+        [InlineKeyboardButton("إخفاء ✖️", callback_data="hide_bot_msg")]
+    ])
+    
+    return m.reply(f'{k} عدد جهاتك ↢ {contacts}', reply_markup=reply_markup)
+
 
    if text == 'افتاري':
      if r.get(f'{m.chat.id}:disableAV:{hmshelp}'): return False
@@ -1045,5 +1052,14 @@ def set_id(c,m,k):
 
 '''
 
+# ==========================================
+# معالج زر الإخفاء (Callback Query Handler)
+# ==========================================
 
+@Client.on_callback_query(filters.regex("^hide_bot_msg$"))
+async def handle_hide_msg(client: Client, callback_query: CallbackQuery):
+    try:
+        await callback_query.message.delete()
+    except Exception:
+        await callback_query.answer("تعذر حذف الرسالة!", show_alert=True)
 
