@@ -1063,10 +1063,12 @@ def set_id(c,m,k):
 # ==========================================
 
 @Client.on_callback_query(filters.regex("^hide_bot_msg$"))
-async def handle_hide_msg(client: Client, callback_query: CallbackQuery):
+async def handle_hide_msg(c: Client, cb: CallbackQuery):
     try:
-        await callback_query.message.delete()
+        await cb.answer()  # إيقاف التحميل فوراً
+        await cb.message.delete()  # حذف الرسالة
     except Exception:
-        await callback_query.answer("تعذر حذف الرسالة!", show_alert=True)
+        pass
+
 
 
