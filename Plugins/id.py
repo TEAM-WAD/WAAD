@@ -1069,3 +1069,4 @@ async def handle_hide_msg(client: Client, callback_query: CallbackQuery):
     except Exception:
         await callback_query.answer("تعذر حذف الرسالة!", show_alert=True)
 
+
