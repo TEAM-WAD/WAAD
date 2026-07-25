@@ -264,12 +264,18 @@ def get_my_rank(c,m,k):
     else:
         contacts = int(r.get(f'{m.chat.id}TotalContacts{m.from_user.id}{hmshelp}'))
     
-    # إضافة زر الإخفاء الشفاف
+    # إنشاء الزر
     reply_markup = InlineKeyboardMarkup([
         [InlineKeyboardButton("إخفاء ✖️", callback_data="hide_bot_msg")]
     ])
     
-    return m.reply(f'{k} عدد جهاتك ↢ {contacts}', reply_markup=reply_markup)
+    # إرسال الرسالة مباشرة مع الزر والرد على رسالة المستخدم
+    return c.send_message(
+        chat_id=m.chat.id,
+        text=f'{k} عدد جهاتك ↢ {contacts}',
+        reply_to_message_id=m.id,
+        reply_markup=reply_markup
+    )
 
 
    if text == 'افتاري':
