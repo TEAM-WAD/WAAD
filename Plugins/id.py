@@ -1062,17 +1062,14 @@ def set_id(c,m,k):
 # معالج زر الإخفاء (Callback Query Handler)
 # ==========================================
 
-@Client.on_callback_query(filters.regex("hide_bot_msg"))
-def handle_hide_msg(c, cb):
+# ==========================================
+# معالج زر إخفاء / حذف الرسالة
+# ==========================================
+
+@Client.on_callback_query(filters.regex("^delAdminMSG$"))
+async def handle_del_admin_msg(client: Client, callback_query: CallbackQuery):
     try:
-        cb.answer()
-        cb.message.delete()
+        await callback_query.answer()  # إيقاف مؤشر التحميل فوراً
+        await callback_query.message.delete()  # حذف الرسالة
     except Exception:
-        try:
-            c.delete_messages(cb.message.chat.id, cb.message.id)
-        except Exception:
-            pass
-
-
-
-
+        pass
